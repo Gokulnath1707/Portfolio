@@ -226,7 +226,7 @@ body.nav-active { overflow: hidden; }
 
 .btn:is(:hover, :focus-visible) { transform: translateY(-4px); }
 
-.btn-primary,
+.btn-primary:is(:hover, :focus-visible),
 .btn-secondary:is(:hover, :focus-visible) {
   background-color: var(--cinnamon-satin);
   color: var(--white);
