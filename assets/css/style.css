@@ -649,8 +649,7 @@ textarea.input-field {
     align-items: center;
     gap: 30px;
   }
-
-  .project .btn { min-width: max-content; }
+    .project .btn { min-width: max-content; }
 
 
 
