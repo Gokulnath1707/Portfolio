@@ -116,7 +116,7 @@ a {
 .rounded-img {
   border-radius: 50%;
   width: 50px; /* Ensure the width and height are the same to maintain a circular shape */
-  height: 50px;
+  height: 70px;
 }
 /* CSS to make the image round */
 .w-100-rounded-img {
@@ -868,7 +868,7 @@ textarea.input-field {
    * CONTACT
    */
 
-  .contact-card { gap: 150px; }
+  .contact-card { gap: 50px; }
 
 }
 
