@@ -116,7 +116,7 @@ a {
 .rounded-img {
   border-radius: 50%;
   width: 50px; /* Ensure the width and height are the same to maintain a circular shape */
-  height: 70px;
+  height: 50px;
 }
 /* CSS to make the image round */
 .w-100-rounded-img {
