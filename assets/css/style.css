@@ -1,14 +1,3 @@
-/*-----------------------------------*\
-  #main.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
@@ -417,7 +406,7 @@ body.nav-active { overflow: hidden; }
   filter: drop-shadow(var(--shadow-2));
 }
 
-.hero-content { text-align: center; }
+.hero-content { align-self: center; }
 
 .hero .section-text { margin-block: 24px 36px; }
 
@@ -437,95 +426,150 @@ body.nav-active { overflow: hidden; }
   #ABOUT
 \*-----------------------------------*/
 
-.about .wrapper {
-  display: grid;
-  gap: 50px;
-  margin-block-end: 70px;
-}
 
-.progress-list .label-wrapper {
+.about-edu-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-block-end: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 20px;
 }
 
-.progress-item:not(:last-child) { margin-block-end: 16px; }
-
-.progress {
-  background-color: var(--raisin-black_a6);
-  height: 6px;
-  width: 100%;
-  border-radius: var(--radius-pill);
-  overflow: hidden;
+.card-box {
+  flex: 1;
+  min-width: 320px;
+  background-color: #f9fafb;
+  padding: 25px 30px;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
-.progress-fill { height: inherit; }
+.card-box ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-.about-card { text-align: center; }
+.card-box li {
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.section-title {
+  margin-bottom: 12px;
+}
+
+.about-edu-wrapper {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.education-box li {
+  font-size: 17px;  /* Or any size you prefer */
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.about-card {
+  background: linear-gradient(135deg, #fafdff); /* Light gradient */
+  border-radius: 12px;
+  border-color: #000000;
+  padding: 25px 20px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+}
 
 .about-card .card-icon {
-  max-width: max-content;
-  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 12px auto;
+  width: 52px;
+  
+
 }
 
-.about-card .card-title { margin-block: 16px 10px; }
+.about-card .card-title {
+  margin-block: 10px 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+}
 
-
-
+.about-card .card-text {
+  font-size: 14.5px;
+  color: #374151;
+  line-height: 1.6;
+}
 
 
 /*-----------------------------------*\
   #PROJECTS
 \*-----------------------------------*/
-
-.project { border-block: 1px solid var(--cadet-blue-crayola_a20); }
-
-.project .title-wrapper { margin-block-end: 40px; }
-
-.project .btn { margin-block-start: 24px; }
-
-.project .grid-list { gap: 40px; }
-
 .project-card {
-  --padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(to bottom right, #f8f6ff, #f3f2fa);
+  min-height: 220px;
+  gap: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .card-content {
+  flex: 2;
+}
+
+.project-card .card-banner {
+  flex: 1;
+  max-width: 280px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card .card-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.project .grid-list {
   display: flex;
   flex-direction: column;
-  gap: var(--padding);
-  border-radius: var(--radius-8);
-  overflow: hidden;
+  gap: 30px;
 }
 
-.project-card-1,
-.project-card-2,
-:is(.project-card-3, .project-card-4) .card-content { padding: var(--padding); }
-
-.project-card-1 { padding-block-end: 0; }
-
-.project :is(.project-card-3, .project-card-4) { gap: 0; }
-
-.project-card .card-tag {
-  font-size: var(--fs-8);
-  font-weight: var(--fw-700);
-  text-transform: uppercase;
+.project-card:hover .card-banner img {
+  transform: scale(1.05);
 }
 
-.project-card .card-title { margin-block: 16px; }
 
-.project-card .card-text { margin-block-end: 20px; }
-
-.project-card .btn-text {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: var(--fw-700);
-  transition: var(--transition-1);
-}
-
-.project-card .btn-text:is(:hover, :focus-visible) { gap: 10px; }
-
-
+/* Optional: Responsive stacking on smaller screens */
 
 
 
@@ -643,13 +687,17 @@ textarea.input-field {
    * PROJECT
    */
 
-  .project .title-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
   }
-    .project .btn { min-width: max-content; }
+
+  .project-card .card-banner {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
 
 
 
@@ -701,7 +749,7 @@ textarea.input-field {
      * spacing
      */
 
-    --section-padding: 120px;
+    --section-padding: 80px;
 
   }
 
@@ -797,34 +845,6 @@ textarea.input-field {
   .about .grid-list { grid-template-columns: repeat(4, 1fr); }
 
 
-
-  /**
-   * PROJECT
-   */
-
-  .project .grid-list {
-    grid-template-columns: 1fr 1fr;
-    row-gap: 50px;
-  }
-
-  .project .grid-list > li:nth-child(-n+2) { grid-column: 1 / 3; }
-
-  .project-card-1,
-  .project-card-2 {
-    flex-direction: row;
-    align-items: flex-end;
-  }
-
-  :is(.project-card-1, .project-card-2) .card-content { width: 33.33%; }
-
-  :is(.project-card-1, .project-card-2) .card-banner { width: 66.66%; }
-
-  .project-card-1 .card-content { padding-block-end: var(--padding); }
-
-  .project-card-2 .card-content { order: 1; }
-
-
-
   /**
    * CONTACT
    */
@@ -836,10 +856,6 @@ textarea.input-field {
   }
 
 }
-
-
-
-
 
 /**
  * responsive for large than 1200px screen
@@ -853,8 +869,6 @@ textarea.input-field {
 
   .container,
   .header { max-width: 1140px; }
-
-
 
   /**
    * ABOUT
