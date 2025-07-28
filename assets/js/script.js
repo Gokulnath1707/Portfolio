@@ -1,72 +1,103 @@
 'use strict';
 
+/**
+ * ----------------------------------------------------------------------
+ * # 1. UTILITY FUNCTION
+ * ----------------------------------------------------------------------
+ * Attaches an event listener to an array of elements.
+ */
+const addEventOnElements = (elements, eventType, callback) => {
+  elements.forEach(element => element.addEventListener(eventType, callback));
+};
 
 
 /**
- * add event listener on multiple elements
+ * ----------------------------------------------------------------------
+ * # 2. MOBILE NAVIGATION
+ * ----------------------------------------------------------------------
+ * Toggles the mobile navigation menu.
+ * Also closes the menu when a navigation link is clicked.
  */
-
-const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, callback);
-  }
-}
-
-
-
-/**
- * NAVBAR TOGGLE FOR MOBILE
- */
-
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
+const navbarLinks = document.querySelectorAll(".navbar-link");
 
-const toggleNavbar = function () {
+const toggleNavbar = () => {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.toggle("nav-active");
-}
+};
 
+// Add toggle functionality to hamburger and close buttons
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
-
-
-/**
- * HEADER
- * active header when window scroll down to 100px
- */
-
-const header = document.querySelector("[data-header]");
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 1000) {
-    header.classList.add("active");
-  } else {
-    header.classList.remove("active");
+// Close navbar when a link is clicked (for mobile view)
+addEventOnElements(navbarLinks, "click", () => {
+  if (navbar.classList.contains("active")) {
+    toggleNavbar();
   }
 });
 
 
+/**
+ * ----------------------------------------------------------------------
+ * # 3. STICKY HEADER
+ * ----------------------------------------------------------------------
+ * Makes the header sticky after scrolling past a certain point.
+ */
+const header = document.querySelector("[data-header]");
+const STICKY_THRESHOLD = 50; // Pixels to scroll before header becomes sticky
+
+const handleScroll = () => {
+  // Add 'active' class to header when scrolled past the threshold
+  header.classList.toggle("active", window.scrollY > STICKY_THRESHOLD);
+};
+
+window.addEventListener("scroll", handleScroll);
+
 
 /**
- * SCROLL REVEAL
+ * ----------------------------------------------------------------------
+ * # 4. SCROLL REVEAL ANIMATION
+ * ----------------------------------------------------------------------
+ * Uses the modern Intersection Observer API for high-performance animations.
  */
-
 const revealElements = document.querySelectorAll("[data-reveal]");
-const revealDelayElements = document.querySelectorAll("[data-reveal-delay]");
 
-const reveal = function () {
-  for (let i = 0, len = revealElements.length; i < len; i++) {
-    if (revealElements[i].getBoundingClientRect().top < window.innerHeight / 1.2) {
-      revealElements[i].classList.add("revealed");
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    // If the element is in the viewport
+    if (entry.isIntersecting) {
+      entry.target.classList.add("revealed");
+      // Stop observing the element after it has been revealed
+      observer.unobserve(entry.target);
     }
+  });
+}, {
+  root: null,         // Observes intersections relative to the viewport
+  rootMargin: '0px',
+  threshold: 0.15     // Triggers when 15% of the element is visible
+});
+
+// Attach the observer to each reveal element
+revealElements.forEach(element => {
+  // Set transition delays from data attributes immediately
+  if (element.dataset.revealDelay) {
+    element.style.transitionDelay = element.dataset.revealDelay;
   }
-}
+  revealObserver.observe(element);
+});
 
-for (let i = 0, len = revealDelayElements.length; i < len; i++) {
-  revealDelayElements[i].style.transitionDelay = revealDelayElements[i].dataset.revealDelay;
-}
 
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
+/**
+ * ----------------------------------------------------------------------
+ * # 5. DYNAMIC COPYRIGHT YEAR
+ * ----------------------------------------------------------------------
+ * Automatically updates the copyright year in the footer.
+ */
+const copyrightElement = document.querySelector(".copyright");
+if (copyrightElement) {
+    const currentYear = new Date().getFullYear();
+    copyrightElement.innerHTML = `&copy; ${currentYear} Gokulnath B. All Rights Reserved.`;
+}
