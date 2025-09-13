@@ -4,68 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 
-    - Primary Meta Tags
-  -->
-  <title>Gokulnath B | Marketing Analytics & Product Management Portfolio</title>
-  <meta name="title" content="Gokulnath B | Marketing Analytics & Product Management Portfolio">
-  <meta name="description" content="Portfolio of Gokulnath B, an MBA student specializing in Marketing Analytics and Product Management, with a passion for data-driven decisions and sustainability.">
-
-  <!-- 
-    - Favicon
-  -->
+  <title>Gokulnath B | Marketing & Product Portfolio</title>
+  <meta name="description" content="Welcome to the professional portfolio of Gokulnath B, an MBA specializing in Marketing Analytics and Product Management.">
   <link rel="icon" type="image/jpeg" href="./assets/img/gk.jpg">
-  <link rel="shortcut icon" href="./assets/img/gk.jpg">
-
-  <!-- 
-    - Google Font Link
-  -->
+  
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- 
-    - Custom CSS Link
-  -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-    - Preload Images
--->
   <link rel="preload" as="image" href="./assets/img/gokul-full.png">
 </head>
 
 <body>
 
-  <!-- 
-    - #HEADER
-  -->
   <header class="header" data-header>
     <div class="container">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo">
         <img src="./assets/img/gk.jpg" width="64" height="64" alt="Gokulnath home" class="rounded-img">
       </a>
-
       <nav class="navbar" data-navbar>
-        <div class="navbar-top">
-          <a href="#" class="logo">
-            <img src="./assets/img/gk.jpg" width="64" height="24" alt="Gokulnath home">
-          </a>
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
         <ul class="navbar-list">
-          <li><a href="#home" class="navbar-link" data-nav-toggler>Home</a></li>
-          <li><a href="#about" class="navbar-link" data-nav-toggler>About</a></li>
-          <li><a href="#projects" class="navbar-link" data-nav-toggler>Projects</a></li>
-          <li><a href="#certificates" class="navbar-link" data-nav-toggler>Certificates</a></li>
-          <li><a href="#contact" class="navbar-link" data-nav-toggler>Contact</a></li>
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="Project.html" class="navbar-link">Projects</a></li>
+          <li><a href="Certificates.html" class="navbar-link">Certificates</a></li>
+          <li><a href="#contact" class="navbar-link">Contact</a></li>
         </ul>
       </nav>
-
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
@@ -73,300 +39,74 @@
     </div>
   </header>
 
-
   <main>
     <article>
 
-      <!-- 
-        - #HERO
-      -->
       <section class="section hero" id="home" aria-labelledby="hero-title">
         <div class="container">
-          <figure class="hero-banner">
+          <figure class="hero-banner" data-reveal="left">
             <img src="./assets/img/gokul-full.png" width="400" height="460" alt="A portrait photo of Gokulnath B">
           </figure>
-
-          <div class="hero-content">
-            <h1 class="h1 hero-title" id="hero-title" data-reveal="top">Gokulnath B</h1>
-            <p class="hero-subtitle" data-reveal="top" data-reveal-delay="0.2s">
+          <div class="hero-content" data-reveal="right">
+            <h1 class="h1 hero-title" id="hero-title">Gokulnath B</h1>
+            <p class="hero-subtitle">
               Marketing Analytics | Product Management | Acupuncturist | Tamil Poet
             </p>
-
-            <p class="section-text" data-reveal="top" data-reveal-delay="0.4s">
-              A marketing enthusiast with technical and managerial skills for connecting products with people in a personalized and sustainable manner. With a passion for Analytics and Sustainability, I aim to make data-driven decisions and am excited to grow, contribute, and tackle real-world challenges with creativity and a hands-on approach.
+            <p class="section-text">
+              An MBA graduate with a passion for bridging the gap between data-driven insights and impactful business strategies.
             </p>
-
-            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="0.6s">
-              <a href="./assets/docs/Gokulnath_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Resume</a>
-              <a href="#contact" class="btn btn-primary">Contact Me</a>
-              <a href="./assets/docs/poem-book.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Poem Book</a>
+            <div class="btn-wrapper">
+              <a href="./assets/docs/Gokulnath_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
+              <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 
-        - #ABOUT
-      -->
       <section class="section about" id="about" aria-label="about me">
         <div class="container">
             <div class="about-content">
-                <div class="card-box" data-reveal="left">
+                <div class="card-box" data-reveal="bottom">
                     <h2 class="h2 section-title">About Me</h2>
                     <p class="section-text">
-                        I’m passionate about connecting the dots between technology and business to create meaningful solutions. With a background in Computer Applications and now pursuing an MBA, I enjoy solving problems, analyzing data, and uncovering insights that drive smarter decisions. I’m especially interested in how marketing and analytics can make businesses more innovative, efficient, and impactful.
+                        I thrive on connecting the dots between technology and business to create meaningful solutions. With a background in Computer Applications and an MBA in Marketing & Analytics, I enjoy solving complex problems, analyzing data, and uncovering insights that drive smarter, more efficient business decisions.
                     </p>
                 </div>
-                <div class="card-box" data-reveal="right">
+                <div class="card-box" data-reveal="bottom" data-reveal-delay="0.2s">
                     <h2 class="h2 section-title">Education</h2>
                     <ul class="education-list">
-                        <li><strong>MBA in Marketing & Analytics</strong><br>SSSIHL, Brindavan Campus, Bangalore (Current)</li>
-                        <li><strong>Diploma in Acupuncture and Science</strong><br>Cumbam Academy, Jain University, 2022</li>
-                        <li><strong>BCA - Bachelor of Computer Applications</strong><br>NGM College, Pollachi, 2021</li>
+                        <li><strong>MBA, Marketing & Analytics</strong><br>SSSIHL, Bangalore (Current)</li>
+                        <li><strong>Diploma, Acupuncture and Science</strong><br>Cumbam Academy, 2022</li>
+                        <li><strong>BCA, Computer Applications</strong><br>NGM College, Pollachi, 2021</li>
                     </ul>
                 </div>
             </div>
-
-            <ul class="grid-list skills-list">
-                <li data-reveal="bottom">
-                    <div class="about-card">
-                        <div class="card-icon"><img src="./assets/images/icon-1.svg" width="52" height="52" loading="lazy" alt="Marketing Icon"></div>
-                        <h3 class="h4 card-title">Marketing</h3>
-                        <p class="card-text">As an MBA student in Marketing, I am constantly enriching my knowledge in a field that I believe is omnipresent, which inspires me to excel.</p>
-                    </div>
-                </li>
-                <li data-reveal="bottom" data-reveal-delay="0.2s">
-                    <div class="about-card">
-                        <div class="card-icon"><img src="./assets/images/icon-2.svg" width="52" height="52" loading="lazy" alt="Analytics Icon"></div>
-                        <h3 class="h4 card-title">Analytics</h3>
-                        <p class="card-text">I am committed to being data-driven in my decision-making, using analysis and storytelling to achieve complete insights.</p>
-                    </div>
-                </li>
-                <li data-reveal="bottom" data-reveal-delay="0.4s">
-                    <div class="about-card">
-                        <div class="card-icon"><img src="./assets/images/icon-4.svg" width="52" height="52" loading="lazy" alt="ESG Icon"></div>
-                        <h3 class="h4 card-title">ESG</h3>
-                        <p class="card-text">A love for nature and sustainability drives me to think long-term, a crucial perspective for a future manager.</p>
-                    </div>
-                </li>
-                <li data-reveal="bottom" data-reveal-delay="0.6s">
-                    <div class="about-card">
-                        <div class="card-icon"><img src="./assets/images/icon-3.svg" width="52" height="52" loading="lazy" alt="Acupuncturist Icon"></div>
-                        <h3 class="h4 card-title">Classical Acupuncturist</h3>
-                        <p class="card-text">I completed a Diploma in Acupuncture and Science from Jain University & Cumbum Academy of Acupuncture in 2022.</p>
-                    </div>
-                </li>
-            </ul>
         </div>
-    </section>
-
-      <!-- 
-        - #PROJECTS
-      -->
-      <section class="section project" id="projects" aria-labelledby="project-label">
-        <div class="container">
-          <div class="title-wrapper" data-reveal="top">
-            <h2 class="h2 section-title" id="project-label">Latest Projects</h2>
-            <p class="section-text">Check out some of my work below.👇</p>
-          </div>
-          <ul class="grid-list">
-            <!-- Project 1 -->
-            <li>
-              <div class="project-card" data-reveal="bottom">
-                <figure class="card-banner img-holder" style="--width: 550; --height: 400;">
-                  <img src="./assets/img/project-1-cover.png" loading="lazy" alt="AI ChatBot & AI Image Generator" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-tag">Website Development</p>
-                  <h3 class="h3 card-title">AI ChatBot & Image Generator</h3>
-                  <a href="https://github.com/Gokulnath1707/AI-chatbot-and-AI-image-generation" class="btn-text" target="_blank" rel="noopener noreferrer">
-                    <span class="span">See Project</span>
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Project 3 -->
-            <li>
-                <div class="project-card" data-reveal="bottom">
-                  <figure class="card-banner img-holder" style="--width: 550; --height: 400;">
-                    <img src="https://placehold.co/550x400/94a3b8/ffffff?text=Project+3" loading="lazy" alt="Placeholder for Project 3" class="img-cover">
-                  </figure>
-                  <div class="card-content">
-                    <p class="card-tag">Data Analysis</p>
-                    <h3 class="h3 card-title">Market Research</h3>
-                    <a href="#" class="btn-text" target="_blank" rel="noopener noreferrer">
-                      <span class="span">See Project</span>
-                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <!-- Project 4 -->
-            <li>
-                <div class="project-card" data-reveal="bottom">
-                  <figure class="card-banner img-holder" style="--width: 550; --height: 400;">
-                    <img src="https://placehold.co/550x400/a78bfa/ffffff?text=Project+4" loading="lazy" alt="Placeholder for Project 4" class="img-cover">
-                  </figure>
-                  <div class="card-content">
-                    <p class="card-tag">Sustainability Study</p>
-                    <h3 class="h3 card-title">ESG Report Analysis</h3>
-                    <a href="#" class="btn-text" target="_blank" rel="noopener noreferrer">
-                      <span class="span">See Project</span>
-                      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <!--Project 5-->
-              <li>
-              <div class="project-card" data-reveal="bottom">
-                <figure class="card-banner img-holder" style="--width: 550; --height: 400;">
-                  <img src="./assets/img/project-1-cover.png" loading="lazy" alt="AI ChatBot & AI Image Generator" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-tag">Website Development</p>
-                  <h3 class="h3 card-title">AI ChatBot & Image Generator</h3>
-                  <a href="https://github.com/Gokulnath1707/AI-chatbot-and-AI-image-generation" class="btn-text" target="_blank" rel="noopener noreferrer">
-                    <span class="span">See Project</span>
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <!--Project 6-->
-            <li>
-              <div class="project-card" data-reveal="bottom">
-                <figure class="card-banner img-holder" style="--width: 550; --height: 400;">
-                  <img src="./assets/img/project-1-cover.png" loading="lazy" alt="AI ChatBot & AI Image Generator" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-tag">Website Development</p>
-                  <h3 class="h3 card-title">AI ChatBot & Image Generator</h3>
-                  <a href="https://github.com/Gokulnath1707/AI-chatbot-and-AI-image-generation" class="btn-text" target="_blank" rel="noopener noreferrer">
-                    <span class="span">See Project</span>
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <!--Project 7-->
-            <li>
-              <div class="project-card" data-reveal="bottom">
-                <figure class="card-banner img-holder" style="--width: 550; --height: 400;">
-                  <img src="./assets/img/project-1-cover.png" loading="lazy" alt="AI ChatBot & AI Image Generator" class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-tag">Website Development</p>
-                  <h3 class="h3 card-title">AI ChatBot & Image Generator</h3>
-                  <a href="https://github.com/Gokulnath1707/AI-chatbot-and-AI-image-generation" class="btn-text" target="_blank" rel="noopener noreferrer">
-                    <span class="span">See Project</span>
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-          
-          </ul>
-        </div>
-      </section>
-
-      <!-- 
-        - #CERTIFICATES
-      -->
-      <section class="section certificates" id="certificates" aria-labelledby="certificates-label">
-          <div class="container">
-              <h2 class="h2 section-title" id="certificates-label">Certificates & Awards</h2>
-              
-              <div class="certificate-container">
-                <h3 class="h3 certificate-subtitle">Academic Certificates</h3>
-                <div class="certificate-grid">
-                    <div class="certificate-card" data-reveal="bottom">
-                        <p class="card-title">Diploma in Acupuncture and Science</p>
-                        <a href="./assets/docs/certificates/Acupuncture-certificate.jpg" target="_blank" rel="noopener noreferrer">View Credential</a>
-                    </div>
-                    <div class="certificate-card" data-reveal="bottom" data-reveal-delay="0.1s">
-                        <p class="card-title">Proficiency Award - BCA UG II Year</p>
-                        <a href="./assets/docs/certificates/proficiency-2nd-bca.jpg" target="_blank" rel="noopener noreferrer">View Credential</a>
-                    </div>
-                    <div class="certificate-card" data-reveal="bottom" data-reveal-delay="0.2s">
-                        <p class="card-title">Introduction To Cloud Computing</p>
-                        <a href="./assets/docs/certificates/Coursera- cloud computing.pdf" target="_blank" rel="noopener noreferrer">View Credential</a>
-                    </div>
-                </div>
-              </div>
-
-              <div class="certificate-container">
-                <h3 class="h3 certificate-subtitle">Other Certificates</h3>
-                <div class="certificate-grid">
-                    <div class="certificate-card" data-reveal="bottom">
-                        <p class="card-title">Tata Data Visualisation - Forage</p>
-                        <a href="./assets/docs/certificates/forage-certificate on Data visualization.pdf" target="_blank" rel="noopener noreferrer">View Credential</a>
-                    </div>
-                    <div class="certificate-card" data-reveal="bottom" data-reveal-delay="0.1s">
-                        <p class="card-title">Logo Design using Canva</p>
-                        <a href="./assets/docs/certificates/coursera_canva_certificate.pdf" target="_blank" rel="noopener noreferrer">View Credential</a>
-                    </div>
-                    <div class="certificate-card" data-reveal="bottom" data-reveal-delay="0.2s">
-                        <p class="card-title">Tamil Poem Competition - First Place</p>
-                        <a href="./assets/docs/certificates/pollachi ilakiya vattanm - 1st place.jpg" target="_blank" rel="noopener noreferrer">View Credential</a>
-                    </div>
-                </div>
-              </div>
-          </div>
       </section>
 
     </article>
   </main>
 
-  <!-- 
-    - #FOOTER
-  -->
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-content">
         <h2 class="h2 section-title">Get In Touch</h2>
         <p class="section-text">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out.
+          I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.
         </p>
         <a href="mailto:bgokulnath567@gmail.com" class="btn btn-primary">bgokulnath567@gmail.com</a>
-        
         <ul class="social-list">
-            <li>
-                <a href="https://www.linkedin.com/in/gokulnath17/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                  <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/Gokulnath1707" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                  <ion-icon name="logo-github"></ion-icon>
-                </a>
-              </li>
-              <li>
-                <a href="tel:7339397567" class="social-link" aria-label="Call me">
-                  <ion-icon name="call-outline"></ion-icon>
-                </a>
-              </li>
+            <li><a href="https://www.linkedin.com/in/gokulnath17/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/Gokulnath1707" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="tel:7339397567" class="social-link" aria-label="Call me"><ion-icon name="call-outline"></ion-icon></a></li>
         </ul>
       </div>
-
-      <p class="copyright">
-        &copy; 2025 Gokulnath B. All Rights Reserved.
-      </p>
+      <p class="copyright">&copy; 2025 Gokulnath B. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- 
-    - Custom JS Link
-  -->
   <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - Ionicon Link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

@@ -4,7 +4,6 @@
  * ----------------------------------------------------------------------
  * # 1. UTILITY FUNCTION
  * ----------------------------------------------------------------------
- * Attaches an event listener to an array of elements.
  */
 const addEventOnElements = (elements, eventType, callback) => {
   elements.forEach(element => element.addEventListener(eventType, callback));
@@ -13,15 +12,12 @@ const addEventOnElements = (elements, eventType, callback) => {
 
 /**
  * ----------------------------------------------------------------------
- * # 2. MOBILE NAVIGATION
+ * # 2. MOBILE NAVIGATION (for future use if needed)
  * ----------------------------------------------------------------------
- * Toggles the mobile navigation menu.
- * Also closes the menu when a navigation link is clicked.
  */
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
-const navbarLinks = document.querySelectorAll(".navbar-link");
 
 const toggleNavbar = () => {
   navbar.classList.toggle("active");
@@ -29,60 +25,58 @@ const toggleNavbar = () => {
   document.body.classList.toggle("nav-active");
 };
 
-// Add toggle functionality to hamburger and close buttons
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
-// Close navbar when a link is clicked (for mobile view)
-addEventOnElements(navbarLinks, "click", () => {
-  if (navbar.classList.contains("active")) {
-    toggleNavbar();
+
+/**
+ * ----------------------------------------------------------------------
+ * # 3. ACTIVE PAGE LINK HIGHLIGHTER
+ * ----------------------------------------------------------------------
+ */
+const navbarLinks = document.querySelectorAll(".navbar-link");
+const currentPage = window.location.pathname.split('/').pop();
+const currentHash = window.location.hash;
+
+navbarLinks.forEach(link => {
+  const linkPage = link.getAttribute('href').split('/').pop().split('#')[0];
+  const linkHash = link.hash;
+
+  // Check for homepage (index.html or empty path)
+  if ((currentPage === linkPage || (currentPage === '' && linkPage === 'index.html')) && !linkHash) {
+    link.classList.add('active');
+  }
+  // Check for other pages
+  if (currentPage === linkPage && currentPage !== 'index.html' && currentPage !== '') {
+    link.classList.add('active');
+  }
+  // Check for hash links like #contact
+  if (linkHash && currentHash === linkHash) {
+    link.classList.add('active');
   }
 });
 
 
 /**
  * ----------------------------------------------------------------------
- * # 3. STICKY HEADER
- * ----------------------------------------------------------------------
- * Makes the header sticky after scrolling past a certain point.
- */
-const header = document.querySelector("[data-header]");
-const STICKY_THRESHOLD = 50; // Pixels to scroll before header becomes sticky
-
-const handleScroll = () => {
-  // Add 'active' class to header when scrolled past the threshold
-  header.classList.toggle("active", window.scrollY > STICKY_THRESHOLD);
-};
-
-window.addEventListener("scroll", handleScroll);
-
-
-/**
- * ----------------------------------------------------------------------
  * # 4. SCROLL REVEAL ANIMATION
  * ----------------------------------------------------------------------
- * Uses the modern Intersection Observer API for high-performance animations.
  */
 const revealElements = document.querySelectorAll("[data-reveal]");
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    // If the element is in the viewport
     if (entry.isIntersecting) {
       entry.target.classList.add("revealed");
-      // Stop observing the element after it has been revealed
       observer.unobserve(entry.target);
     }
   });
 }, {
-  root: null,         // Observes intersections relative to the viewport
+  root: null,
   rootMargin: '0px',
-  threshold: 0.15     // Triggers when 15% of the element is visible
+  threshold: 0.15
 });
 
-// Attach the observer to each reveal element
 revealElements.forEach(element => {
-  // Set transition delays from data attributes immediately
   if (element.dataset.revealDelay) {
     element.style.transitionDelay = element.dataset.revealDelay;
   }
@@ -94,7 +88,6 @@ revealElements.forEach(element => {
  * ----------------------------------------------------------------------
  * # 5. DYNAMIC COPYRIGHT YEAR
  * ----------------------------------------------------------------------
- * Automatically updates the copyright year in the footer.
  */
 const copyrightElement = document.querySelector(".copyright");
 if (copyrightElement) {

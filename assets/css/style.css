@@ -28,12 +28,13 @@
    */
   --ff-main: 'Manrope', sans-serif;
 
-  --fs-1: calc(2.7rem + 1.38vw); /* Fluid font size for H1 */
-  --fs-2: calc(2.6rem + .66vw);  /* Fluid font size for H2 */
-  --fs-3: 2.2rem;
-  --fs-4: 1.8rem;
-  --fs-5: 1.7rem;
-  --fs-6: 1.6rem;
+  /* Updated Font Sizes for better visual hierarchy */
+  --fs-1: calc(3rem + 1.5vw);   /* Larger H1 */
+  --fs-2: calc(2.8rem + 0.8vw);  /* Larger H2 */
+  --fs-3: 2.4rem;              /* Larger H3 / Card Titles */
+  --fs-4: 2rem;                /* Larger H4 */
+  --fs-5: 1.8rem;              /* Larger Section Text */
+  --fs-6: 1.7rem;              /* Slightly larger body text */
 
   --fw-500: 500;
   --fw-700: 700;
@@ -109,7 +110,7 @@ body {
   background-color: var(--clr-bg-white);
   color: var(--clr-text-secondary);
   font-size: var(--fs-6);
-  line-height: 1.7;
+  line-height: 1.8; /* Increased for better readability */
 }
 
 body.nav-active { overflow: hidden; }
@@ -333,7 +334,7 @@ body.nav-active { overflow: hidden; }
 
 .hero-subtitle {
   color: var(--clr-primary);
-  font-size: var(--fs-4);
+  font-size: var(--fs-4); /* Updated */
   font-weight: var(--fw-500);
   margin-block: -10px 20px;
 }
@@ -440,8 +441,8 @@ body.nav-active { overflow: hidden; }
 }
 
 .project .grid-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   justify-content: center;
   gap: 24px;
 }
@@ -452,10 +453,7 @@ body.nav-active { overflow: hidden; }
   box-shadow: var(--shadow-1);
   overflow: hidden;
   transition: transform var(--transition-short), box-shadow var(--transition-short);
-  /* Updated values to enforce a 3-column layout on desktop */
-  flex-basis: 320px;
-  flex-grow: 1;
-  max-width: 360px;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -477,12 +475,11 @@ body.nav-active { overflow: hidden; }
   color: var(--clr-primary);
   font-weight: var(--fw-700);
   margin-block-end: 8px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .project-card .card-title {
   margin-block-end: 12px;
-  font-size: 1.9rem;
 }
 
 .project-card .btn-text {
@@ -536,7 +533,7 @@ body.nav-active { overflow: hidden; }
 .certificate-card .card-title {
   font-weight: var(--fw-700);
   margin-block-end: 12px;
-  font-size: 1.7rem;
+  font-size: 1.8rem; /* Updated */
 }
 
 .certificate-card a {
