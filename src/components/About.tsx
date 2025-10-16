@@ -1,87 +1,75 @@
-import { GraduationCap, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { Lightbulb, Users, Settings } from "lucide-react";
+import profileImage from "@/assets/profile.jpg";
 
 const About = () => {
-  const highlights = [
+  const traits = [
     {
-      icon: <GraduationCap size={28} />,
-      title: 'MBA Student',
-      description: 'Currently pursuing Masters in Business Administration with a focus on strategic management and entrepreneurship.',
+      icon: Lightbulb,
+      title: "Analytical Thinker",
+      description: "Loves solving complex business problems with data.",
     },
     {
-      icon: <Target size={28} />,
-      title: 'Goal-Oriented',
-      description: 'Driven by results and committed to achieving excellence in every project and initiative.',
+      icon: Users,
+      title: "Collaborative Leader",
+      description: "Believes in teamwork and cross-functional impact.",
     },
     {
-      icon: <Lightbulb size={28} />,
-      title: 'Innovative Thinker',
-      description: 'Passionate about finding creative solutions to complex business challenges.',
-    },
-    {
-      icon: <TrendingUp size={28} />,
-      title: 'Growth Focused',
-      description: 'Continuously learning and adapting to the evolving business landscape.',
+      icon: Settings,
+      title: "Tech-Savvy Innovator",
+      description: "Passionate about digital transformation and analytics tools.",
     },
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-          About Me
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto rounded-full"></div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-        <div className="relative">
-          <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 p-1">
-            <div className="w-full h-full bg-slate-100 rounded-2xl flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-6xl font-bold mb-4">
-                  YN
-                </div>
-                <p className="text-slate-600 text-lg">Your Photo Here</p>
-              </div>
-            </div>
+    <section id="about" className="section-container bg-muted/30">
+      <h2 className="section-title">About Me</h2>
+      
+      <div className="max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          <div className="w-48 h-48 rounded-full overflow-hidden shadow-xl ring-4 ring-secondary/20 animate-fade-in">
+            <img
+              src={profileImage}
+              alt="Gocool Profile"
+              className="w-full h-full object-cover"
+            />
           </div>
-        </div>
-
-        <div className="space-y-6">
-          <h3 className="text-3xl font-bold text-slate-900">
-            Transforming Vision into Reality
-          </h3>
-          <p className="text-lg text-slate-700 leading-relaxed">
-            As an MBA student with a passion for business strategy and innovation, I bring a unique blend of analytical thinking and creative problem-solving to every challenge.
-          </p>
-          <p className="text-lg text-slate-700 leading-relaxed">
-            My journey in business education has equipped me with comprehensive knowledge in finance, marketing, operations, and leadership. I'm dedicated to leveraging these skills to drive meaningful impact in the organizations I work with.
-          </p>
-          <p className="text-lg text-slate-700 leading-relaxed">
-            Beyond academics, I actively engage in case competitions, consulting projects, and networking events to bridge the gap between theory and practice.
-          </p>
-        </div>
-      </div>
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {highlights.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 border border-slate-200"
-          >
-            <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center text-white mb-4">
-              {item.icon}
-            </div>
-            <h4 className="text-xl font-bold text-slate-900 mb-2">
-              {item.title}
-            </h4>
-            <p className="text-slate-600 leading-relaxed">
-              {item.description}
+          
+          <div className="flex-1 text-center md:text-left animate-slide-in">
+            <p className="text-lg leading-relaxed mb-4">
+              I'm an MBA student specializing in <strong>Business Analytics, Strategy, and Leadership</strong>. 
+              With a passion for transforming data into actionable insights, I thrive on solving real-world 
+              business challenges through analytical thinking and strategic frameworks.
+            </p>
+            <p className="text-lg leading-relaxed mb-4">
+              My academic journey has equipped me with a robust understanding of operations management, 
+              market analysis, and digital transformation. I believe in leveraging technology and data 
+              to drive business excellence and sustainable growth.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Beyond academics, I'm committed to continuous learning and staying at the forefront of 
+              business innovation. I'm eager to contribute to organizations that value data-driven 
+              decision-making and strategic thinking.
             </p>
           </div>
-        ))}
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          {traits.map((trait, index) => (
+            <div
+              key={index}
+              className="portfolio-card text-center"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <trait.icon className="text-white" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{trait.title}</h3>
+              <p className="text-muted-foreground">{trait.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

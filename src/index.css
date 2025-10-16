@@ -2,41 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 26% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    --primary: 217 91% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 186 76% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 186 76% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 20%;
+
+    --radius: 0.75rem;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 20%), hsl(217 91% 35%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 13% 98%));
+    --shadow-card: 0 4px 20px -2px hsl(217 91% 20% / 0.08);
+    --shadow-hover: 0 8px 30px -4px hsl(217 91% 20% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  .dark {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 23% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 23% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 186 76% 48%;
+    --primary-foreground: 220 26% 14%;
+
+    --secondary: 217 91% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 18% 22%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 186 76% 48%;
+    --accent-foreground: 220 26% 14%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 18% 28%;
+    --input: 220 18% 28%;
+    --ring: 186 76% 48%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 25%), hsl(217 91% 40%));
+    --gradient-card: linear-gradient(135deg, hsl(220 23% 18%), hsl(220 18% 22%));
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-@layer utilities {
-  @keyframes blob {
-    0%, 100% {
-      transform: translate(0px, 0px) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
+@layer base {
+  * {
+    @apply border-border;
   }
 
-  .animate-blob {
-    animation: blob 7s infinite;
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
+  
+  html {
+    scroll-behavior: smooth;
   }
+}
 
-  .animation-delay-4000 {
-    animation-delay: 4s;
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20;
+  }
+  
+  .section-title {
+    @apply text-4xl font-bold text-center mb-12 text-foreground;
+  }
+  
+  .portfolio-card {
+    @apply bg-card rounded-2xl p-6 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .portfolio-card:hover {
+    box-shadow: var(--shadow-hover);
+    @apply transform -translate-y-1;
   }
 }
