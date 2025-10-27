@@ -115,3 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function openModal(projectId) {
   alert("You clicked on project: " + projectId + ".\nImplement a modal or a new page to show case study details here.");
 }
+
+// Loading Screen Script
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loading-screen");
+  loader.style.opacity = "0";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 800); // Wait for fade-out animation
+});

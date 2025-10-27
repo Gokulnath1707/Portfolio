@@ -9,8 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
   </head>
   <body>
+    <!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loader"></div>
+  <p>Loading your portfolio...</p>
+</div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -64,9 +72,10 @@
             <p>I am a passionate MBA candidate specializing in Marketing and Analytics, with a keen interest in the intersection of technology, business strategy, and sustainable design. My academic and project work is centered on using data to uncover consumer insights and drive product innovation.</p>
             <p>From developing AI-powered applications to conducting in-depth research on consumer behavior, I am driven by the challenge of solving complex problems. I thrive in collaborative environments and am committed to continuous learning, particularly in the fields of GenAI, cloud technologies, and product management.</p>
             <div class="traits-grid">
-              <div class="trait-card"><div class="trait-icon"></div><h3>Analytical Thinker</h3><p>Data-driven problem solving</p></div>
-              <div class="trait-card"><div class="trait-icon"></div><h3>Collaborative Leader</h3><p>Team-oriented approach</p></div>
-              <div class="trait-card"><div class="trait-icon"></div><h3>Tech-Savvy Innovator</h3><p>Embracing digital transformation</p></div>
+              <div class="trait-card"><div class="trait-icon"></div><h3>Marketing & Product Management</h3><p></p></div>
+              <div class="trait-card"><div class="trait-icon"></div><h3>Data Analytics</h3><p></p></div>
+              <div class="trait-card"><div class="trait-icon"></div><h3>Classical Acupunturist</h3><p></p></div>
+              <div class="trait-card"><div class="trait-icon"></div><h3>Tamil Poet</h3><p></p></div>
             </div>
           </div>
         </div>
@@ -78,20 +87,23 @@
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
         <div class="projects-grid">
-          <div class="project-card reveal" onclick="openModal('ai-expense-tracker')">
-            <div class="project-image"><img src="https://images.pexels.com/photos/590029/pexels-photo-590029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AI-Powered Expense Tracking Application"></div>
+          <div class="project-card reveal">
+            
+            <div class="project-image"><img src="#" alt="AI-Powered Expense Tracking Application"></div>
             <div class="project-content">
               <h3>AI-Powered Personal Finance Manager</h3>
               <p>A web application that leverages AI to provide users with intelligent expense tracking and financial insights, Budgeting and Investment suggestions.</p>
               <div class="project-tags">
-                <span class="tag">AI/ML</span>
+                <span class="tag">AI & API</span>
                 <span class="tag">Python</span>
                 <span class="tag">Web App</span>
                 <span class="tag">FinTech</span></div>
             </div>
           </div>
+
+
           <div class="project-card reveal" onclick="openModal('dissertation-research')">
-            <div class="project-image"><img src="https://images.pexels.com/photos/4145356/pexels-photo-4145356.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sustainable Product Design Research"></div>
+            <div class="project-image"><img src="#"></div>
             <div class="project-content">
               <h3>Influence of Product Design on Consumer Purchase Decision</h3>
               <p>MBA Dissertation research to understand the influence of Product Design elements on purchase intention of Sustainable Personal Care Products</p>
@@ -107,9 +119,9 @@
           <div class="project-card reveal" onclick="openModal('samsung-marketing')">
             <div class="project-image"><img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Samsung Marketing"></div>
             <div class="project-content">
-              <h3>Samsung Foldable Smartphones</h3>
-              <p>Technology marketing strategy and market positioning analysis for a disruptive product.</p>
-              <div class="project-tags"><span class="tag">Marketing</span><span class="tag">Technology</span><span class="tag">Strategy</span></div>
+              <h3>AI ChatBot & Image Generator</h3>
+              <p>An integrated website to generate text content and image based on the request of the user. It contains the tech stack of HTML, CSS, JS, PHP and API keys</p>
+              <div class="project-tags"><span class="tag">AI ChatBot</span><span class="tag">AI Image Generator</span><span class="tag">Website</span></div>
             </div>
           </div>
         </div>
@@ -125,9 +137,28 @@
             <h3>Professional Summary</h3>
             <p>Results-driven MBA candidate with a strong foundation in business analytics, strategic planning, and data-driven decision-making. Proven ability to analyze complex business scenarios, develop innovative solutions, and collaborate effectively with cross-functional teams.</p>
             <div class="resume-highlights">
-              <div class="highlight-item"><h4>Core Competencies</h4><ul><li>Business Analytics & Data Visualization</li><li>Strategic Planning & Market Analysis</li><li>Product Management Fundamentals</li><li>Project Management</li></ul></div>
-              <div class="highlight-item"><h4>Key Skills</h4><ul><li>Data Analysis (Excel, SQL, Python)</li><li>BI Tools (Tableau, Power BI)</li><li>Market Research & Competitive Analysis</li><li>Team Leadership & Collaboration</li></ul></div>
-              <div class="highlight-item"><h4>Achievements</h4><ul><li>Led 5+ strategic case study projects</li><li>Developed optimization models saving 15% costs</li><li>Presented at business conferences</li><li>Dean's List recognition (2023-2024)</li></ul></div>
+              <div class="highlight-item"><h4>Core Competencies</h4>
+                <ul>
+                  <li>Data Analytics & Visualization</li>
+                  <li>Decision Modelling & Optimization</li>
+                  <li>Product Management</li>
+                  <li>Team Leadership & Problem solving</li>
+                </ul>
+              </div>
+              <div class="highlight-item"><h4>Key Skills</h4>
+                <ul>
+                  <li>Data Analysis (Excel, SQL, Python)</li>
+                  <li>BI Tools (Tableau, Power BI)</li>
+                  <li>Market Research & Competitive Analysis</li>
+               
+                </ul></div>
+              <div class="highlight-item"><h4>Achievements</h4>
+                <ul>
+                  <li>Proficiency Award for Academic Performance in BCA 2022-23</li>
+                  <li>Authored a Tamil Poem Book <b>"Ilaigalin Narambugal"</b> and co-authored 3 books</li>
+                  <li>Presented a paper - "Cultural Diplomacy and Soft Power within G20" in a confernce</li>
+                  
+                </ul></div>
             </div>
           </div>
           <div class="resume-download">
@@ -138,8 +169,8 @@
           <div class="certificate-column">
             <h3 class="certificate-category">Academic Credentials</h3>
             <div class="certificate-list">
-              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM Product Manager</h4><p>Your University Name</p><span class="year">2025</span></div></div>
-              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>Bachelor's Degree</h4><p>Your University Name</p><span class="year">2022</span></div></div>
+              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM Product Manager</h4><p>Currently pursuing</p><span class="year">2025</span></div></div>
+              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM - Intorduction to Cloud Computing</h4><p></p><span class="year">2022</span></div></div>
             </div>
           </div>
           <div class="certificate-column">
@@ -153,20 +184,25 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <h2 class="section-title reveal">Let's Connect</h2>
-        <div class="contact-content reveal">
-          <p class="contact-tagline">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team.</p>
-          <div class="contact-info">
-            <a href="mailto:bgokulnath567@gmail.com" class="contact-item"><span class="contact-icon">✉️</span><span>bgokulnath567@gmail.com</span></a>
-            <a href="https://linkedin.com/in/gokulnath1707"></a>
-            
-          </div>
-        </div>
-      </div>
-    </section>
+
+   <!-- Contact / Connect Section -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title reveal">Contact</h2>
+    <div class="social-links reveal">
+      <a href="https://linkedin.com/in/gokulnath1707" target="_blank" class="social-icon linkedin" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/gokulnath1707" target="_blank" class="social-icon github" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:bgokulnath567@gmail.com" class="social-icon email" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
