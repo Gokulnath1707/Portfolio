@@ -224,6 +224,24 @@ body.dark-mode .btn-primary:hover { background-color: #2563eb; }
 .certificate-info p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 5px; }
 .certificate-info .year { display: inline-block; padding: 3px 10px; background-color: var(--primary-color); color: var(--white); border-radius: 12px; font-size: 0.85rem; font-weight: 500; }
 
+/* Internships Section Styles */
+.internships-section { background-color: var(--white); }
+.internships-grid { display: flex; gap: 30px; align-items: stretch; justify-content: center; flex-wrap: wrap; }
+.internship-card { background-color: var(--bg-light); padding: 25px; border-radius: 12px; width: 420px; box-shadow: var(--shadow); border: 1px solid transparent; transition: all 0.3s ease; }
+.internship-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary-color); }
+.internship-header { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px; }
+.internship-header h3 { font-size:1.1rem; color:var(--navy); margin:0; }
+.internship-role { color:var(--text-light); font-weight:600; font-size:0.95rem; }
+.internship-duration { color:var(--text-light); margin-bottom:10px; font-size:0.95rem; }
+.internship-bullets { list-style: none; padding: 0; margin: 0; }
+.internship-bullets li { padding-left: 20px; position: relative; margin-bottom:8px; color: var(--text-light); }
+.internship-bullets li::before { content: '•'; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+
+@media (max-width: 768px) {
+  .internships-grid { flex-direction: column; align-items: center; }
+  .internship-card { width: 100%; max-width: 520px; }
+}
+
 .contact-section { background-color: var(--bg-light); }
 .contact-content { text-align: center; max-width: 600px; margin: 0 auto; }
 .contact-tagline { font-size: 1.3rem; color: var(--text-light); margin-bottom: 40px; }
