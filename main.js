@@ -34,18 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // Close mobile menu on click
       if (navMenu.classList.contains('active')) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
       }
       
-      // Smooth scroll to section
       const targetId = link.getAttribute('href');
       const targetSection = document.querySelector(targetId);
       if (targetSection) {
         e.preventDefault();
-        const offsetTop = targetSection.offsetTop - 70; // Adjust for fixed navbar height
+        const offsetTop = targetSection.offsetTop - 70;
         window.scrollTo({
           top: offsetTop,
           behavior: 'smooth'
@@ -54,25 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- ALL SCROLL-RELATED FUNCTIONS IN ONE PLACE ---
+  // --- ALL SCROLL-RELATED FUNCTIONS ---
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
-    // 1. Navbar style on scroll
     if (scrollPosition > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // 2. Back to Top button visibility
     if (scrollPosition > 300) {
       backToTopBtn.classList.add('visible');
     } else {
       backToTopBtn.classList.remove('visible');
     }
 
-    // 3. Reveal elements on scroll
     const windowHeight = window.innerHeight;
     revealElements.forEach(el => {
       const elementTop = el.getBoundingClientRect().top;
@@ -81,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
-    // 4. Update active navigation link
     let currentSectionId = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -89,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSectionId = section.getAttribute('id');
         }
     });
+    
     navLinks.forEach(link => {
         link.classList.remove('active');
         if(link.getAttribute('href').substring(1) === currentSectionId) {
@@ -97,24 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Attach a single, efficient scroll listener
   window.addEventListener('scroll', handleScroll);
   
-  // Back to top click listener
   backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // --- INITIALIZE ON PAGE LOAD ---
   initTheme();
-  handleScroll(); // Run once on load to set initial states
+  handleScroll(); 
 
 });
-
-// --- PROJECT MODAL PLACEHOLDER ---
-function openModal(projectId) {
-  alert("You clicked on project: " + projectId + ".\nImplement a modal or a new page to show case study details here.");
-}
 
 // Loading Screen Script
 window.addEventListener("load", function() {
@@ -122,5 +109,65 @@ window.addEventListener("load", function() {
   loader.style.opacity = "0";
   setTimeout(() => {
     loader.style.display = "none";
-  }, 800); // Wait for fade-out animation
+  }, 800); 
 });
+
+// --- ENHANCED PROJECT MODALS ---
+const modalData = {
+  'mnist-ensemble': {
+    title: "MNIST Ensemble Classifier",
+    content: "Designed and implemented a multi-model machine learning architecture to classify the MNIST handwritten digit dataset. By combining <strong>Support Vector Machines (SVM)</strong>, Random Forests, and K-Nearest Neighbors (KNN) into a voting ensemble, the system achieved superior accuracy and robustness compared to standalone classifiers.",
+    tech: ["Python", "Scikit-Learn", "SVM", "Data Analytics"]
+  },
+  'text-analytics': {
+    title: "Corporate Annual Report Analytics",
+    content: "Developed a text and web analytics pipeline to process complex corporate annual report PDFs. Utilizing Natural Language Processing (NLP), the tool extracts strategic management themes, performs sentiment analysis on market outlooks, and visualizes word trends to support investment decision-making.",
+    tech: ["NLP", "Python", "Web Scraping", "Text Mining"]
+  },
+  'green-banking': {
+    title: "Green Banking Perception Analysis",
+    content: "Conducted extensive market research for an MBA dissertation focusing on sustainable finance. Formulated a conceptual model to measure customer awareness, perception, and adoption barriers regarding Green Banking practices in the Indian banking sector. The findings highlight actionable strategies for financial institutions to improve their 'Green Brand' image.",
+    tech: ["Market Research", "Consumer Behavior", "Strategic Planning", "SPSS / Excel"]
+  },
+  'inventory-app': {
+    title: "Dispensary Inventory Manager",
+    content: "Engineered a practical, no-code inventory management application using AppSheet and Google Sheets for a local dispensary. The app streamlines daily operations by automating stock tracking, triggering low-inventory alerts, and optimizing the supply chain workflow without requiring expensive enterprise software.",
+    tech: ["AppSheet", "Google Workspace", "Operations Management", "No-Code"]
+  }
+};
+
+function openModal(projectId) {
+  const data = modalData[projectId];
+  if (!data) return;
+
+  const modal = document.createElement('div');
+  modal.className = 'custom-modal-overlay';
+  modal.innerHTML = `
+    <div class="custom-modal-content">
+      <span class="close-modal" title="Close">&times;</span>
+      <h3>${data.title}</h3>
+      <p>${data.content}</p>
+      <div class="modal-tags">
+        ${data.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+  // Close when clicking the X
+  modal.querySelector('.close-modal').onclick = closeModal;
+  
+  // Close when clicking outside the modal content
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  };
+
+  function closeModal() {
+    modal.remove();
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+}

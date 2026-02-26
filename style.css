@@ -323,3 +323,166 @@ body.dark-mode .btn-primary:hover { background-color: #2563eb; }
 .social-icon.email:hover {
   color: #d93025;
 }
+
+/* --- SKILLS SECTION STYLES --- */
+.skills-section {
+  background-color: var(--bg-medium);
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-category {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.skill-header {
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-header i {
+  color: var(--primary-color);
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+body.dark-mode .skill-category {
+  background-color: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .skill-badge {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+body.dark-mode .skill-badge:hover {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+/* --- PROJECT MODAL STYLES --- */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(15, 23, 42, 0.85); /* Darker overlay */
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  z-index: 2000; 
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  animation: fadeInModal 0.3s forwards ease-out;
+}
+
+.custom-modal-content {
+  background: var(--white);
+  padding: 40px; 
+  border-radius: 15px;
+  max-width: 650px; 
+  width: 90%;
+  position: relative; 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  animation: slideUpModal 0.4s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark-mode .custom-modal-content {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.close-modal {
+  position: absolute; 
+  top: 15px; 
+  right: 20px;
+  font-size: 32px; 
+  cursor: pointer; 
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+  color: var(--primary-color);
+}
+
+.custom-modal-content h3 {
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 15px;
+  padding-right: 30px; /* Space for close button */
+}
+
+body.dark-mode .custom-modal-content h3 {
+  color: #f8fafc;
+}
+
+.custom-modal-content p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.modal-tags { 
+  display: flex; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 20px;
+}
+
+body.dark-mode .modal-tags {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+@keyframes fadeInModal {
+  to { opacity: 1; }
+}
+
+@keyframes slideUpModal {
+  to { transform: translateY(0); }
+}
