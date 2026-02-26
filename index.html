@@ -10,16 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-
   </head>
   <body>
-    <!-- Loading Screen -->
-<div id="loading-screen">
-  <div class="loader"></div>
-  <p>Preparing my portfolio...</p>
-</div>
+    <div id="loading-screen">
+      <div class="loader"></div>
+      <p>Preparing my portfolio...</p>
+    </div>
 
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
         <div class="nav-logo">Gokulnath - Portfolio</div>
@@ -27,30 +24,28 @@
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#internships" class="nav-link">Internships</a></li>
           <li><a href="#credentials" class="nav-link">Credentials</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
-          
-          <!-- Creative Theme Toggle Switch -->
           <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
             <div class="toggle-circle"></div>
           </div>
-          
           <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         </div>
       </div>
     </nav>
 
-    <!-- Home Section -->
     <section id="home" class="hero-section">
       <div class="floating-blur blur-1"></div>
       <div class="floating-blur blur-2"></div>
       <div class="floating-blur blur-3"></div>
       <div class="hero-content">
         <h1 class="hero-title fade-in">Gokulnath B</h1>
-        <h2 class="hero-subtitle fade-in-delay">MBA Student | Product Management | Marketing Analytics | Acupunturist | Tamil Poet</h2>
-        <p class="hero-tagline fade-in-delay-2">Data driven decsions & </p>
+        <h2 class="hero-subtitle fade-in-delay">MBA Student | Product Management | Marketing Analytics | Acupuncturist | Tamil Poet</h2>
+        <p class="hero-tagline fade-in-delay-2">Bridging data-driven strategy with innovative product development.</p>
         <div class="hero-buttons fade-in-delay-3">
           <a href="#projects" class="btn-primary">View Projects</a>
           <a href="#credentials" class="btn-primary">View Resume</a>
@@ -60,7 +55,6 @@
       <div class="hero-decoration"></div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section about-section">
       <div class="container">
         <h2 class="section-title reveal">About Me</h2>
@@ -69,68 +63,157 @@
             <img src="public/assets/gokulnath_image.jpg" alt="Image of Gokulnath" class="profile-picture">
           </div>
           <div class="about-text reveal">
-            <p>MBA candidate specializing in Marketing & Analytics with good communication, research, and relationship
-            building skills. Experienced in Analyst Relations and Market Research projects. Interested in understanding
-            customer needs, engaging prospects, and creating positive product experiences. Motivated to contribute to a
-            fast-paced SaaS environment through clear communication and data-backed insights.</p>
-            <div class="traits-grid" style="font-size: 18px;">
-              <div class="trait-card"><div class="trait-icon"></div><h3>Marketing & Product Management</h3><p></p></div>
-              <div class="trait-card"><div class="trait-icon"></div><h3>Data Analytics</h3><p></p></div>
-              <div class="trait-card"><div class="trait-icon"></div><h3>Classical Acupunturist</h3><p></p></div>
-              <div class="trait-card"><div class="trait-icon"></div><h3>Tamil Poet</h3><p></p></div>
+            <p>I am an MBA candidate specializing in Marketing & Analytics, passionate about the intersection of data science, product strategy, and consumer behavior. From engineering machine learning models to conducting in-depth research on sustainable markets, I thrive on transforming complex datasets into actionable business insights.</p>
+            <p>Whether I am analyzing corporate annual reports, building inventory management solutions, or exploring creative avenues through Tamil poetry, my focus remains on creating intuitive, data-backed experiences that solve real-world problems.</p>
+            <div class="traits-grid">
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-rocket"></i></div><h3>Product Management</h3><p>Strategic roadmap planning & cross-functional leadership.</p></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-chart-pie"></i></div><h3>Data Analytics</h3><p>Extracting actionable insights using ML & text analytics.</p></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-leaf"></i></div><h3>Classical Acupuncturist</h3><p>Holistic approach to health and wellness.</p></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-pen-nib"></i></div><h3>Tamil Poet</h3><p>Author of "Ilaigalin Narambugal" & creative storyteller.</p></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section projects-section">
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
         <div class="projects-grid">
-          <div class="project-card reveal">
-            
-            <div class="project-image"><img src="#" alt="AI-Powered Expense Tracking Application"></div>
+          
+          <div class="project-card reveal" onclick="openModal('mnist-ensemble')">
+            <div class="project-image"><img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600" alt="MNIST Ensemble"></div>
             <div class="project-content">
-              <h3>AI-Powered Personal Finance Manager</h3>
-              <p>A web application that leverages AI to provide users with intelligent expense tracking and financial insights, Budgeting and Investment suggestions.</p>
+              <h3>MNIST Ensemble Classifier</h3>
+              <p>Developed a robust digit recognition system by combining Support Vector Machines (SVM), Random Forests, and KNN into a high-accuracy ensemble model.</p>
               <div class="project-tags">
-                <span class="tag">AI & API</span>
+                <span class="tag">Machine Learning</span>
                 <span class="tag">Python</span>
-                <span class="tag">Web App</span>
-                <span class="tag">FinTech</span></div>
+                <span class="tag">SVM</span>
+              </div>
             </div>
           </div>
 
-
-          <div class="project-card reveal" onclick="openModal('dissertation-research')">
-            <div class="project-image"><img src="#"></div>
+          <div class="project-card reveal" onclick="openModal('text-analytics')">
+            <div class="project-image"><img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=600" alt="Text Analytics"></div>
             <div class="project-content">
-              <h3>Influence of Product Design on Consumer Purchase Decision</h3>
-              <p>MBA Dissertation research to understand the influence of Product Design elements on purchase intention of Sustainable Personal Care Products</p>
+              <h3>Corporate Annual Report Analytics</h3>
+              <p>Leveraged text and web analytics to extract strategic themes, sentiment trends, and key insights from company annual report PDFs.</p>
               <div class="project-tags">
-                <span class="tag">MBA Disseration</span>
-                <span class="tag">Marketing</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Text Mining</span>
+                <span class="tag">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal" onclick="openModal('green-banking')">
+            <div class="project-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600" alt="Green Banking Research"></div>
+            <div class="project-content">
+              <h3>Green Banking Perception Analysis</h3>
+              <p>MBA Dissertation formulating a conceptual model to understand customer perception, awareness, and adoption barriers of green banking practices in India.</p>
+              <div class="project-tags">
+                <span class="tag">Market Research</span>
                 <span class="tag">Consumer Behavior</span>
                 <span class="tag">Sustainability</span>
               </div>
             </div>
           </div>
-         
-          <div class="project-card reveal" onclick="openModal('samsung-marketing')">
-            <div class="project-image"><img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Samsung Marketing"></div>
+
+          <div class="project-card reveal" onclick="openModal('inventory-app')">
+            <div class="project-image"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" alt="Inventory App"></div>
             <div class="project-content">
-              <h3>AI ChatBot & Image Generator</h3>
-              <p>An integrated website to generate text content and image based on the request of the user. It contains the tech stack of HTML, CSS, JS, PHP and API keys</p>
-              <div class="project-tags"><span class="tag">AI ChatBot</span><span class="tag">AI Image Generator</span><span class="tag">Website</span></div>
+              <h3>Dispensary Inventory Manager</h3>
+              <p>Built a streamlined, no-code inventory management application integrated with Google Sheets to track stock levels and optimize supply chain workflows.</p>
+              <div class="project-tags">
+                <span class="tag">AppSheet</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Operations</span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Credentials Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title reveal">Technical & Business Skills</h2>
+        <div class="skills-container reveal">
+          
+          <div class="skill-category">
+            <h3 class="skill-header"><i class="fas fa-database"></i> Data & Machine Learning</h3>
+            <div class="skill-badges">
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">Machine Learning (SVM, KNN, RF)</span>
+              <span class="skill-badge">Text & Web Analytics</span>
+              <span class="skill-badge">NLP</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-header"><i class="fas fa-chart-bar"></i> BI & Tools</h3>
+            <div class="skill-badges">
+              <span class="skill-badge">Tableau</span>
+              <span class="skill-badge">Power BI</span>
+              <span class="skill-badge">Advanced Excel</span>
+              <span class="skill-badge">AppSheet</span>
+              <span class="skill-badge">Google Workspace</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-header"><i class="fas fa-lightbulb"></i> Product & Strategy</h3>
+            <div class="skill-badges">
+              <span class="skill-badge">Product Management</span>
+              <span class="skill-badge">Market Research</span>
+              <span class="skill-badge">Consumer Behavior Analysis</span>
+              <span class="skill-badge">Decision Modelling</span>
+              <span class="skill-badge">Competitive Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="internships" class="section internships-section">
+      <div class="container">
+        <h2 class="section-title reveal">Internships & Experience</h2>
+        <div class="internships-grid reveal">
+          
+          <div class="internship-card">
+            <div class="internship-header">
+              <h3>Shorterloop</h3>
+              <span class="internship-role">Template Research Intern</span>
+            </div>
+            <p class="internship-duration">Feb 2025 - Apr 2025</p>
+            <ul class="internship-bullets">
+              <li>Spearheaded product research initiatives to identify user needs and assist in feature prioritization for SaaS templates.</li>
+              <li>Collaborated cross-functionally with design and engineering teams to prototype and validate new platform features.</li>
+              <li>Analyzed competitor frameworks to optimize template structures, improving user onboarding and experience.</li>
+            </ul>
+          </div>
+
+          <div class="internship-card">
+            <div class="internship-header">
+              <h3>TCS (Tata Consultancy Services)</h3>
+              <span class="internship-role">Intern - Data Analytics</span>
+            </div>
+            <p class="internship-duration">Jun 2023 - Aug 2023</p>
+            <ul class="internship-bullets">
+              <li>Engineered data cleaning pipelines and developed interactive dashboards using Python and Tableau.</li>
+              <li>Synthesized complex datasets to generate actionable insights, directly contributing to measurable process efficiency improvements.</li>
+              <li>Presented data-driven reports to stakeholders, translating technical metrics into clear business objectives.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <section id="credentials" class="section credentials-section">
       <div class="container">
         <h2 class="section-title reveal">Credentials</h2>
@@ -139,28 +222,13 @@
             <h3>Professional Summary</h3>
             <p>Results-driven MBA candidate with a strong foundation in business analytics, strategic planning, and data-driven decision-making. Proven ability to analyze complex business scenarios, develop innovative solutions, and collaborate effectively with cross-functional teams.</p>
             <div class="resume-highlights">
-              <div class="highlight-item"><h4>Core Competencies</h4>
-                <ul>
-                  <li>Data Analytics & Visualization</li>
-                  <li>Decision Modelling & Optimization</li>
-                  <li>Product Management</li>
-                  <li>Team Leadership & Problem solving</li>
-                </ul>
-              </div>
-              <div class="highlight-item"><h4>Key Skills</h4>
-                <ul>
-                  <li>Data Analysis (Excel, SQL, Python)</li>
-                  <li>BI Tools (Tableau, Power BI)</li>
-                  <li>Market Research & Competitive Analysis</li>
-               
-                </ul></div>
               <div class="highlight-item"><h4>Achievements</h4>
                 <ul>
                   <li>Proficiency Award for Academic Performance in BCA 2022-23</li>
                   <li>Authored a Tamil Poem Book <b>"Ilaigalin Narambugal"</b> and co-authored 3 books</li>
-                  <li>Presented a paper - "Cultural Diplomacy and Soft Power within G20" in a confernce</li>
-                  
-                </ul></div>
+                  <li>Presented a paper - "Cultural Diplomacy and Soft Power within G20" in a conference</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="resume-download">
@@ -172,7 +240,7 @@
             <h3 class="certificate-category">Academic Credentials</h3>
             <div class="certificate-list">
               <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM Product Manager</h4><p>Currently pursuing</p><span class="year">2025</span></div></div>
-              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM - Intorduction to Cloud Computing</h4><p></p><span class="year">2022</span></div></div>
+              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM - Introduction to Cloud Computing</h4><p></p><span class="year">2022</span></div></div>
             </div>
           </div>
           <div class="certificate-column">
@@ -186,65 +254,30 @@
       </div>
     </section>
 
-    <!-- Internships Section -->
-    <section id="internships" class="section internships-section">
+    <section id="contact" class="section contact-section">
       <div class="container">
-        <h2 class="section-title reveal">Internships</h2>
-        <div class="internships-grid reveal">
-          <div class="internship-card">
-            <div class="internship-header">
-              <h3>TCS (Tata Consultancy Services)</h3>
-              <span class="internship-role">Intern - Data Analytics</span>
-            </div>
-            <p class="internship-duration">Jun 2023 - Aug 2023</p>
-            <ul class="internship-bullets">
-              <li>Worked on data cleaning and visualization using Python and Tableau.</li>
-              <li>Contributed to insights that helped improve process efficiency.</li>
-            </ul>
-          </div>
-
-          <div class="internship-card">
-            <div class="internship-header">
-              <h3>Shorterloop</h3>
-              <span class="internship-role">Template Research Intern</span>
-            </div>
-            <p class="internship-duration">Feb 2025 - Apr 2025</p>
-            <ul class="internship-bullets">
-              <li>Assisted in product research and feature prioritization.</li>
-              <li>Collaborated with design and engineering to prototype new features.</li>
-            </ul>
-          </div>
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <p class="contact-tagline">Open for Product Management and Data Analytics opportunities.</p>
+        <div class="social-links reveal">
+          <a href="https://linkedin.com/in/gokulnath1707" target="_blank" class="social-icon linkedin" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/gokulnath1707" target="_blank" class="social-icon github" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:bgokulnath567@gmail.com" class="social-icon email" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
     </section>
 
-   <!-- Contact / Connect Section -->
-<section id="contact" class="section contact-section">
-  <div class="container">
-    <h2 class="section-title reveal">Contact</h2>
-    <div class="social-links reveal">
-      <a href="https://linkedin.com/in/gokulnath1707" target="_blank" class="social-icon linkedin" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/gokulnath1707" target="_blank" class="social-icon github" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:bgokulnath567@gmail.com" class="social-icon email" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <p>&copy; 2025 Gokulnath B. All rights reserved.</p>
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
     <script src="main.js"></script>
