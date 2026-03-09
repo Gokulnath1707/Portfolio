@@ -26,7 +26,7 @@
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#internships" class="nav-link">Internships</a></li>
-          <li><a href="#credentials" class="nav-link">Credentials</a></li>
+          <li><a href="#accomplishments" class="nav-link">Accomplishments</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
@@ -48,8 +48,8 @@
         <p class="hero-tagline fade-in-delay-2">Bridging data-driven strategy with innovative product development.</p>
         <div class="hero-buttons fade-in-delay-3">
           <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#credentials" class="btn-primary">View Resume</a>
-          <a href="/assets/poem-book.pdf" class="btn-primary">Download my Book</a>
+          <a href="#accomplishments" class="btn-primary">View Resume</a>
+          <a href="Portfolio/assets/poem-book.pdf" class="btn-primary">Download my Book</a>
         </div>
       </div>
       <div class="hero-decoration"></div>
@@ -80,58 +80,77 @@
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
         <div class="projects-grid">
-          
-          <div class="project-card reveal" onclick="openModal('mnist-ensemble')">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600" alt="MNIST Ensemble"></div>
+
+          <!-- NEW: Leave Management System -->
+          <div class="project-card reveal" onclick="openModal('leave-mgmt')">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600" alt="Leave Management System">
+              <span class="project-badge badge-new">New</span>
+            </div>
             <div class="project-content">
-              <h3>MNIST Ensemble Classifier</h3>
-              <p>Developed a robust digit recognition system by combining Support Vector Machines (SVM), Random Forests, and KNN into a high-accuracy ensemble model.</p>
+              <h3>Leave Management System</h3>
+              <p>Developed a digital Leave Management System for Hostel Dispensary, replacing manual logbooks with a
+responsive web application for data entry, and automated record generation using Google AppScript & Google Sheets.</p>
               <div class="project-tags">
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Python</span>
-                <span class="tag">SVM</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Google Apps Script</span>
+                <span class="tag">Web App</span>
               </div>
             </div>
           </div>
 
-          <div class="project-card reveal" onclick="openModal('text-analytics')">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=600" alt="Text Analytics"></div>
+          <!-- NEW: AI Resume Analyser -->
+          <div class="project-card reveal" onclick="openModal('ai-resume')">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=600" alt="AI Resume Analyser">
+              <span class="project-badge badge-ai">AI</span>
+            </div>
             <div class="project-content">
-              <h3>Corporate Annual Report Analytics</h3>
-              <p>Leveraged text and web analytics to extract strategic themes, sentiment trends, and key insights from company annual report PDFs.</p>
+              <h3>AI Resume Analyser</h3>
+              <p>Developing an AI Resume Analyzer, a full-stack web app that uses AI to analyse resumes, match job descriptions, and review LinkedIn profiles, powered by Flask, Groq API, and JavaScript.</p>
               <div class="project-tags">
                 <span class="tag">NLP</span>
-                <span class="tag">Text Mining</span>
-                <span class="tag">Data Visualization</span>
+                <span class="tag">AI</span>
+                <span class="tag">Python</span>
               </div>
             </div>
           </div>
 
-          <div class="project-card reveal" onclick="openModal('green-banking')">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600" alt="Green Banking Research"></div>
-            <div class="project-content">
-              <h3>Green Banking Perception Analysis</h3>
-              <p>MBA Dissertation formulating a conceptual model to understand customer perception, awareness, and adoption barriers of green banking practices in India.</p>
-              <div class="project-tags">
-                <span class="tag">Market Research</span>
-                <span class="tag">Consumer Behavior</span>
-                <span class="tag">Sustainability</span>
-              </div>
-            </div>
+       <div class="project-card reveal" onclick="openModal('dissertation')">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?q=80&w=600" alt="Dissertation Research">
+          <span class="project-badge badge-research">Research</span>
+        </div>
+        <div class="project-content">
+          <h3>Consumer Behavior in Sustainable Personal Care</h3>
+          <p>Researching how product design elements influence consumer buying behavior in sustainable personal care products.</p>
+          <div class="project-tags">
+            <span class="tag">Dissertation</span>
+            <span class="tag">Consumer Behavior</span>
+            <span class="tag">Sustainability</span>
           </div>
+        </div>
+      </div>
 
-          <div class="project-card reveal" onclick="openModal('inventory-app')">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" alt="Inventory App"></div>
-            <div class="project-content">
-              <h3>Dispensary Inventory Manager</h3>
-              <p>Built a streamlined, no-code inventory management application integrated with Google Sheets to track stock levels and optimize supply chain workflows.</p>
-              <div class="project-tags">
-                <span class="tag">AppSheet</span>
-                <span class="tag">Google Sheets</span>
-                <span class="tag">Operations</span>
-              </div>
-            </div>
+          <!-- Existing Projects -->
+
+          
+
+      <div class="project-card reveal" onclick="openModal('iv-monitor')">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=600" alt="Smart IV Drip Monitoring System">
+          <span class="project-badge badge-new">IoT</span>
+        </div>
+        <div class="project-content">
+          <h3>Smart IV Drip Monitoring System</h3>
+          <p>Built an IoT-based IV monitoring system with real-time tracking and automated alert notifications, reducing manual monitoring and improving patient safety.</p>
+          <div class="project-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Firebase</span>
           </div>
+        </div>
+      </div>
 
         </div>
       </div>
@@ -141,40 +160,30 @@
       <div class="container">
         <h2 class="section-title reveal">Technical & Business Skills</h2>
         <div class="skills-container reveal">
-          
           <div class="skill-category">
             <h3 class="skill-header"><i class="fas fa-database"></i> Data & Machine Learning</h3>
             <div class="skill-badges">
-              <span class="skill-badge">Python</span>
-              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">Python</span><span class="skill-badge">SQL</span>
               <span class="skill-badge">Machine Learning (SVM, KNN, RF)</span>
-              <span class="skill-badge">Text & Web Analytics</span>
-              <span class="skill-badge">NLP</span>
+              <span class="skill-badge">Text & Web Analytics</span><span class="skill-badge">NLP</span>
             </div>
           </div>
-
           <div class="skill-category">
             <h3 class="skill-header"><i class="fas fa-chart-bar"></i> BI & Tools</h3>
             <div class="skill-badges">
-              <span class="skill-badge">Tableau</span>
-              <span class="skill-badge">Power BI</span>
-              <span class="skill-badge">Advanced Excel</span>
-              <span class="skill-badge">AppSheet</span>
+              <span class="skill-badge">Tableau</span><span class="skill-badge">Power BI</span>
+              <span class="skill-badge">Advanced Excel</span><span class="skill-badge">AppSheet</span>
               <span class="skill-badge">Google Workspace</span>
             </div>
           </div>
-
           <div class="skill-category">
             <h3 class="skill-header"><i class="fas fa-lightbulb"></i> Product & Strategy</h3>
             <div class="skill-badges">
-              <span class="skill-badge">Product Management</span>
-              <span class="skill-badge">Market Research</span>
+              <span class="skill-badge">Product Management</span><span class="skill-badge">Market Research</span>
               <span class="skill-badge">Consumer Behavior Analysis</span>
-              <span class="skill-badge">Decision Modelling</span>
-              <span class="skill-badge">Competitive Analysis</span>
+              <span class="skill-badge">Decision Modelling</span><span class="skill-badge">Competitive Analysis</span>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -183,7 +192,6 @@
       <div class="container">
         <h2 class="section-title reveal">Internships & Experience</h2>
         <div class="internships-grid reveal">
-          
           <div class="internship-card">
             <div class="internship-header">
               <h3>Shorterloop</h3>
@@ -196,7 +204,6 @@
               <li>Analyzed competitor frameworks to optimize template structures, improving user onboarding and experience.</li>
             </ul>
           </div>
-
           <div class="internship-card">
             <div class="internship-header">
               <h3>TCS (Tata Consultancy Services)</h3>
@@ -209,47 +216,53 @@
               <li>Presented data-driven reports to stakeholders, translating technical metrics into clear business objectives.</li>
             </ul>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section id="credentials" class="section credentials-section">
+    <section id="accomplishments" class="section accomplishments-section">
       <div class="container">
-        <h2 class="section-title reveal">Credentials</h2>
-        <div class="resume-content reveal">
-          <div class="resume-summary">
-            <h3>Professional Summary</h3>
-            <p>Results-driven MBA candidate with a strong foundation in business analytics, strategic planning, and data-driven decision-making. Proven ability to analyze complex business scenarios, develop innovative solutions, and collaborate effectively with cross-functional teams.</p>
-            <div class="resume-highlights">
-              <div class="highlight-item"><h4>Achievements</h4>
-                <ul>
-                  <li>Proficiency Award for Academic Performance in BCA 2022-23</li>
-                  <li>Authored a Tamil Poem Book <b>"Ilaigalin Narambugal"</b> and co-authored 3 books</li>
-                  <li>Presented a paper - "Cultural Diplomacy and Soft Power within G20" in a conference</li>
-                </ul>
-              </div>
+        <h2 class="section-title reveal">Accomplishments</h2>
+        <div class="achievements-wrapper reveal">
+          <h3 class="sub-section-title">Notable Achievements</h3>
+          <div class="achievements-list">
+            <div class="achievement-item">
+              <div class="achievement-year">2023</div>
+              <div class="achievement-details"><p>Awarded the <strong>Proficiency Award</strong> for outstanding Academic Performance in BCA (2022-23).</p></div>
             </div>
-          </div>
-          <div class="resume-download">
-            <a href="assets/Gokulnath_Resume.pdf" download="Gokulnath_Resume.pdf" class="btn-primary"><span>📄</span> Download CV</a>
+            <div class="achievement-item">
+              <div class="achievement-year">2023</div>
+              <div class="achievement-details"><p>Presented a research paper titled <strong>"Cultural Diplomacy and Soft Power within G20"</strong> at a national conference.</p></div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-year">Poetry</div>
+              <div class="achievement-details"><p>Authored the Tamil Poem Book <strong>"Ilaigalin Narambugal"</strong> and successfully co-authored 3 additional literary books.</p></div>
+            </div>
           </div>
         </div>
-        <div class="certificates-grid reveal">
-          <div class="certificate-column">
-            <h3 class="certificate-category">Academic Credentials</h3>
-            <div class="certificate-list">
-              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM Product Manager</h4><p>Currently pursuing</p><span class="year">2025</span></div></div>
-              <div class="certificate-item"><div class="certificate-icon">📜</div><div class="certificate-info"><h4>IBM - Introduction to Cloud Computing</h4><p></p><span class="year">2022</span></div></div>
+        <div class="certifications-wrapper reveal">
+          <h3 class="sub-section-title">Certifications</h3>
+          <div class="cert-grid">
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fab fa-ibm"></i></div>
+              <div class="cert-info"><h4>IBM Product Manager</h4><p>IBM</p><span class="cert-status in-progress">Currently Pursuing (2025)</span></div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fas fa-cloud"></i></div>
+              <div class="cert-info"><h4>Introduction to Cloud Computing</h4><p>IBM</p><span class="cert-status completed">Completed (2022)</span></div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="cert-info"><h4>AI & Cloud-Native Bootcamp</h4><p>Technology Bootcamp I</p><span class="cert-status completed">Completed (2025)</span></div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="cert-info"><h4>Data Analytics Professional</h4><p>Coursera</p><span class="cert-status completed">Completed (2024)</span></div>
             </div>
           </div>
-          <div class="certificate-column">
-            <h3 class="certificate-category">Online Certificates</h3>
-            <div class="certificate-list">
-              <div class="certificate-item"><div class="certificate-icon">🎓</div><div class="certificate-info"><h4>AI & Cloud-Native Bootcamp</h4><p>Technology Bootcamp I</p><span class="year">2025</span></div></div>
-              <div class="certificate-item"><div class="certificate-icon">🎓</div><div class="certificate-info"><h4>Data Analytics Professional</h4><p>Coursera</p><span class="year">2024</span></div></div>
-            </div>
-          </div>
+        </div>
+        <div class="resume-download reveal" style="margin-top: 50px; text-align: center;">
+          <a href="assets/Gokulnath_Resume.pdf" download="Gokulnath_Resume.pdf" class="btn-primary"><span>📄</span> Download Full Resume</a>
         </div>
       </div>
     </section>
@@ -257,17 +270,11 @@
     <section id="contact" class="section contact-section">
       <div class="container">
         <h2 class="section-title reveal">Let's Connect</h2>
-        <p class="contact-tagline">Open for Product Management and Data Analytics opportunities.</p>
+        <p class="contact-tagline" style="text-align: center; margin-bottom: 30px; color: var(--text-light); font-size: 1.1rem;">Open for Product Management and Data Analytics opportunities.</p>
         <div class="social-links reveal">
-          <a href="https://linkedin.com/in/gokulnath1707" target="_blank" class="social-icon linkedin" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/gokulnath1707" target="_blank" class="social-icon github" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="mailto:bgokulnath567@gmail.com" class="social-icon email" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+          <a href="https://linkedin.com/in/gokulnath1707" target="_blank" class="social-icon linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/gokulnath1707" target="_blank" class="social-icon github" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:bgokulnath567@gmail.com" class="social-icon email" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </section>
@@ -279,6 +286,14 @@
     </footer>
 
     <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Modal -->
+    <div id="projectModal" class="custom-modal-overlay" style="display:none;" onclick="closeModalOnOverlay(event)">
+      <div class="custom-modal-content" id="modalContent">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>

@@ -1,173 +1,166 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  // --- GET ALL NECESSARY ELEMENTS ---
-  const navbar = document.getElementById('navbar');
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.section, .hero-section');
-  const backToTopBtn = document.getElementById('backToTop');
-  const themeToggle = document.getElementById('themeToggle');
-  const body = document.body;
-  const revealElements = document.querySelectorAll('.reveal');
-
-  // --- THEME TOGGLE (DARK/LIGHT MODE) ---
-  const initTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      body.classList.add('dark-mode');
-    }
-  };
-
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-
-  // --- HAMBURGER MENU & NAVIGATION ---
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (navMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      }
-      
-      const targetId = link.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        e.preventDefault();
-        const offsetTop = targetSection.offsetTop - 70;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // --- ALL SCROLL-RELATED FUNCTIONS ---
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-
-    if (scrollPosition > 300) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
-    }
-
-    const windowHeight = window.innerHeight;
-    revealElements.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-    
-    let currentSectionId = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if(scrollPosition >= sectionTop - 150) {
-            currentSectionId = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href').substring(1) === currentSectionId) {
-            link.classList.add('active');
-        }
-    });
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  initTheme();
-  handleScroll(); 
-
-});
-
-// Loading Screen Script
-window.addEventListener("load", function() {
-  const loader = document.getElementById("loading-screen");
-  loader.style.opacity = "0";
+/* ── LOADING SCREEN ── */
+window.addEventListener('load', () => {
   setTimeout(() => {
-    loader.style.display = "none";
-  }, 800); 
+    const screen = document.getElementById('loading-screen');
+    if (screen) { screen.style.opacity = '0'; setTimeout(() => screen.style.display = 'none', 800); }
+  }, 800);
 });
 
-// --- ENHANCED PROJECT MODALS ---
-const modalData = {
-  'mnist-ensemble': {
-    title: "MNIST Ensemble Classifier",
-    content: "Designed and implemented a multi-model machine learning architecture to classify the MNIST handwritten digit dataset. By combining <strong>Support Vector Machines (SVM)</strong>, Random Forests, and K-Nearest Neighbors (KNN) into a voting ensemble, the system achieved superior accuracy and robustness compared to standalone classifiers.",
-    tech: ["Python", "Scikit-Learn", "SVM", "Data Analytics"]
+/* ── THEME TOGGLE ── */
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') document.body.classList.add('dark-mode');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+
+/* ── HAMBURGER MENU ── */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  });
+});
+
+/* ── NAVBAR SCROLL ── */
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+  // Back to top
+  const btn = document.getElementById('backToTop');
+  btn.classList.toggle('visible', window.scrollY > 400);
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < 120 && top > -section.offsetHeight + 100) {
+      document.querySelectorAll('.nav-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + section.id);
+      });
+    }
+  });
+});
+
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ── SCROLL REVEAL ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── PROJECT MODAL DATA ── */
+const projects = {
+  'leave-mgmt': {
+    title: 'Leave Management System',
+    img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800',
+    tags: ['Full Stack', 'HR Tech', 'Dashboard', 'Web App'],
+    overview: 'A comprehensive Leave Management System designed to digitize and streamline the entire employee leave lifecycle — from request submission to manager approval and HR reporting.',
+    features: [
+      'Role-based access for Employees, Managers, and HR Admins',
+      'Leave request submission with type selection (casual, sick, earned, etc.)',
+      'Manager approval/rejection workflow with email notifications',
+      'Real-time leave balance tracking and calendar view',
+      'HR dashboard with leave analytics, trends, and exportable reports',
+      'Holiday calendar management and department-wise leave overview',
+    ],
+    tech: ['Python / Django', 'HTML, CSS, JavaScript', 'SQLite / PostgreSQL', 'REST API', 'Chart.js'],
+    outcome: 'Reduces manual HR effort, eliminates paperwork, and provides real-time visibility into workforce availability.',
   },
-  'text-analytics': {
-    title: "Corporate Annual Report Analytics",
-    content: "Developed a text and web analytics pipeline to process complex corporate annual report PDFs. Utilizing Natural Language Processing (NLP), the tool extracts strategic management themes, performs sentiment analysis on market outlooks, and visualizes word trends to support investment decision-making.",
-    tech: ["NLP", "Python", "Web Scraping", "Text Mining"]
+  'ai-resume': {
+    title: 'AI Resume Analyser',
+    img: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800',
+    tags: ['NLP', 'AI', 'Python', 'Machine Learning', 'HR Tech'],
+    overview: 'An intelligent, NLP-powered resume screening tool that parses resumes, compares them against a job description, and provides an actionable match score with feedback — cutting recruiter screening time significantly.',
+    features: [
+      'PDF and DOCX resume parsing with structured data extraction',
+      'Job Description (JD) input and skill keyword extraction',
+      'TF-IDF and cosine similarity-based match scoring engine',
+      'Named Entity Recognition (NER) for skills, education, and experience',
+      'Ranked candidate shortlist with visual score breakdown',
+      'Feedback module suggesting areas for resume improvement',
+    ],
+    tech: ['Python', 'spaCy / NLTK', 'scikit-learn', 'PyMuPDF / python-docx', 'Streamlit / Flask', 'Pandas'],
+    outcome: 'Automates resume screening, reduces bias in shortlisting, and provides candidates with transparent improvement feedback.',
   },
-  'green-banking': {
-    title: "Green Banking Perception Analysis",
-    content: "Conducted extensive market research for an MBA dissertation focusing on sustainable finance. Formulated a conceptual model to measure customer awareness, perception, and adoption barriers regarding Green Banking practices in the Indian banking sector. The findings highlight actionable strategies for financial institutions to improve their 'Green Brand' image.",
-    tech: ["Market Research", "Consumer Behavior", "Strategic Planning", "SPSS / Excel"]
+  'iv-monitor': {
+  title: 'Smart IV Drip Monitoring System',
+  img: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=800',
+  tags: ['IoT', 'Arduino', 'Firebase', 'Frontend', 'Healthcare'],
+  overview: 'An IoT-based IV drip monitoring system that provides real-time tracking of drip flow rates and automates alert notifications to caretakers — reducing manual rounds and improving patient safety.',
+  features: [
+    'Real-time IV drip level and flow rate monitoring via Arduino sensors',
+    'Automated alerts sent to caretakers when drip is low or flow is irregular',
+    'Firebase backend for live data sync across devices',
+    'Frontend dashboard displaying patient-wise drip status',
+    'Reduced manual monitoring workload for nursing staff',
+  ],
+  tech: ['Arduino', 'C/C++ (Embedded)', 'Firebase Realtime Database', 'HTML / CSS / JavaScript', 'IoT Sensors'],
+  outcome: 'Streamlined caretaker workflows, minimized human error in IV monitoring, and enhanced patient safety through real-time automated alerts.',
   },
-  'inventory-app': {
-    title: "Dispensary Inventory Manager",
-    content: "Engineered a practical, no-code inventory management application using AppSheet and Google Sheets for a local dispensary. The app streamlines daily operations by automating stock tracking, triggering low-inventory alerts, and optimizing the supply chain workflow without requiring expensive enterprise software.",
-    tech: ["AppSheet", "Google Workspace", "Operations Management", "No-Code"]
-  }
+  'dissertation': {
+  title: 'Consumer Behavior in Sustainable Personal Care',
+  img: 'https://images.unsplash.com/photo-1607006344380-b6775a0824a7?q=80&w=800',
+  tags: ['Dissertation', 'Consumer Behavior', 'Sustainability', 'Product Design', 'Market Research'],
+  overview: 'MBA Dissertation researching how product design elements — such as packaging, labeling, color, and eco-branding — influence consumer buying behavior in sustainable personal care products.',
+  features: [
+    'Conceptual framework linking design elements to purchase intent',
+    'Primary data collection via structured consumer survey',
+    'Analysis of packaging, eco-labels, and visual appeal as decision drivers',
+    'Segmentation of consumer attitudes toward sustainable products',
+    'Recommendations for brands on design-led sustainability marketing',
+  ],
+  tech: ['SPSS', 'Survey Design', 'Factor Analysis', 'Regression Analysis', 'Consumer Behavior Frameworks'],
+  outcome: 'Provides actionable insights for sustainable personal care brands on how to leverage product design as a competitive differentiator to drive purchase intent.',
+}
 };
 
-function openModal(projectId) {
-  const data = modalData[projectId];
-  if (!data) return;
+/* ── MODAL FUNCTIONS ── */
+function openModal(id) {
+  const p = projects[id];
+  if (!p) return;
 
-  const modal = document.createElement('div');
-  modal.className = 'custom-modal-overlay';
-  modal.innerHTML = `
-    <div class="custom-modal-content">
-      <span class="close-modal" title="Close">&times;</span>
-      <h3>${data.title}</h3>
-      <p>${data.content}</p>
-      <div class="modal-tags">
-        ${data.tech.map(t => `<span class="tag">${t}</span>`).join('')}
-      </div>
+  document.getElementById('modalBody').innerHTML = `
+    <img src="${p.img}" alt="${p.title}" class="modal-img">
+    <h3>${p.title}</h3>
+    <p>${p.overview}</p>
+    <div class="modal-section">
+      <h4>Key Features</h4>
+      <ul>${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
+    </div>
+    <div class="modal-section">
+      <h4>Outcome</h4>
+      <p style="margin-bottom:0">${p.outcome}</p>
+    </div>
+    <div class="modal-tags">
+      ${p.tech.map(t => `<span class="tag">${t}</span>`).join('')}
     </div>
   `;
-  
-  document.body.appendChild(modal);
-  document.body.style.overflow = 'hidden'; // Prevent background scrolling
 
-  // Close when clicking the X
-  modal.querySelector('.close-modal').onclick = closeModal;
-  
-  // Close when clicking outside the modal content
-  modal.onclick = (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  };
-
-  function closeModal() {
-    modal.remove();
-    document.body.style.overflow = 'auto'; // Restore scrolling
-  }
+  const modal = document.getElementById('projectModal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
+
+function closeModal() {
+  document.getElementById('projectModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('projectModal')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
