@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/gk.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ilaigalin Narambugal | Reader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="book-reader-page">
+    <header class="book-reader-header">
+      <a href="index.html" class="book-reader-link">Back to Portfolio</a>
+      <div class="book-reader-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <div class="toggle-circle"></div>
+        </button>
+        <a
+          href="assets/poem-book.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary book-download-btn"
+        >
+          Open Full Screen
+        </a>
+      </div>
+    </header>
+
+    <main class="book-reader-shell">
+      <section class="book-reader-intro reveal active">
+        <p class="book-reader-kicker">Online Reading</p>
+        <h1>Ilaigalin Narambugal</h1>
+      </section>
+
+      <section class="book-stage-wrap reveal active">
+        <div class="book-reader-frame">
+          <button id="prevPageBtn" class="btn-primary book-side-btn book-side-btn-left" type="button" aria-label="Previous pages">
+            Previous
+          </button>
+
+          <div class="book-stage" id="bookStage">
+            <div class="book-stage-shadow"></div>
+            <div class="book-page-viewport">
+              <div id="currentSpread" class="book-spread current">
+                <div class="book-page book-page-left">
+                  <canvas id="currentLeftPageCanvas" class="book-page-canvas" aria-label="Current left page of Ilaigalin Narambugal"></canvas>
+                </div>
+                <div class="book-page book-page-right">
+                  <canvas id="currentRightPageCanvas" class="book-page-canvas" aria-label="Current right page of Ilaigalin Narambugal"></canvas>
+                </div>
+              </div>
+              <div id="incomingSpread" class="book-spread incoming">
+                <div class="book-page book-page-left">
+                  <canvas id="incomingLeftPageCanvas" class="book-page-canvas" aria-label="Incoming left page of Ilaigalin Narambugal"></canvas>
+                </div>
+                <div class="book-page book-page-right">
+                  <canvas id="incomingRightPageCanvas" class="book-page-canvas" aria-label="Incoming right page of Ilaigalin Narambugal"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button id="nextPageBtn" class="btn-primary book-side-btn book-side-btn-right" type="button" aria-label="Next pages">
+            Next
+          </button>
+        </div>
+
+        <div class="book-reader-controls">
+          <div class="book-page-status">
+            <span id="pageIndicator">Page 1 of 1</span>
+            <span id="bookLoadingState">Loading book...</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="book.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

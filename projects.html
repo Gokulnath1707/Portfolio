@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/gk.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Gokulnath Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <div class="loader"></div>
+      <p>Preparing my portfolio...</p>
+    </div>
+
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo"><a href="index.html" class="nav-logo-link">Gokulnath - Portfolio</a></div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#internships" class="nav-link">Internships</a></li>
+          <li><a href="index.html#accomplishments" class="nav-link">Accomplishments</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <div class="toggle-circle"></div>
+          </div>
+          <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section projects-hero">
+      <div class="floating-blur blur-1"></div>
+      <div class="floating-blur blur-2"></div>
+      <div class="floating-blur blur-3"></div>
+      <div class="hero-content">
+        <p class="projects-hero-eyebrow fade-in">Project Portfolio</p>
+        <h1 class="hero-title fade-in-delay">Detailed Project Showcase</h1>
+        <p class="hero-tagline fade-in-delay-2">
+          A dedicated page for the work I have built, researched, and shipped, with space for detailed context and direct access to repositories or live platforms.
+        </p>
+        <div class="hero-buttons fade-in-delay-3">
+          <a href="#projectList" class="btn-primary">Browse Projects</a>
+          <a href="index.html" class="btn-primary">Back to Home</a>
+        </div>
+      </div>
+      <div class="hero-decoration"></div>
+    </section>
+
+    <section class="section projects-detail-section">
+      <div class="container">
+        <div class="projects-detail-header reveal">
+          <div>
+            <h2 class="section-title section-title-left">Projects</h2>
+            <p class="projects-detail-intro">
+              Each project is listed here separately with a stronger description, main highlights, and space for GitHub and hosted links.
+            </p>
+          </div>
+          <p class="projects-count" id="projectCount"></p>
+        </div>
+
+        <div id="projectList" class="projects-detail-list"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Gokulnath B. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="projects-data.js"></script>
+    <script src="projects-page.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/gk.jpg" />
+    <link rel="icon" type="image/svg+xml" href="public/assets/gk1.jpg" />
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gokulnath | Portfolio</title>
@@ -23,7 +23,7 @@
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#internships" class="nav-link">Internships</a></li>
           <li><a href="#accomplishments" class="nav-link">Accomplishments</a></li>
@@ -47,9 +47,9 @@
         <h2 class="hero-subtitle fade-in-delay">MBA Student | Product Management | Marketing Analytics | Acupuncturist | Tamil Poet</h2>
         <p class="hero-tagline fade-in-delay-2">Bridging data-driven strategy with innovative product development.</p>
         <div class="hero-buttons fade-in-delay-3">
-          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="projects.html" class="btn-primary">View Projects</a>
           <a href="#accomplishments" class="btn-primary">View Resume</a>
-          <a href="assets/poem-book.pdf" class="btn-primary">Download my Book</a>
+          <a href="book.html" class="btn-primary">Read my Book</a>
         </div>
       </div>
       <div class="hero-decoration"></div>
@@ -60,16 +60,20 @@
         <h2 class="section-title reveal">About Me</h2>
         <div class="about-content">
           <div class="about-image reveal">
-            <img src="public/assets/gokulnath_image.jpg" alt="Image of Gokulnath" class="profile-picture">
+            <div class="about-slider" id="aboutSlider" aria-label="Gokulnath image slider">
+              <img src="public/assets/gk1.jpg" alt="Portrait of Gokulnath" class="profile-picture about-slide active">
+              <img src="public/assets/gk2.png" alt="Gokulnath profile slide 2" class="profile-picture about-slide">
+              <img src="public/assets/gk3.JPG" alt="Gokulnath profile slide 3" class="profile-picture about-slide">
+            </div>
           </div>
           <div class="about-text reveal">
             <p>I am an MBA candidate specializing in Marketing & Analytics, passionate about the intersection of data science, product strategy, and consumer behavior. From engineering machine learning models to conducting in-depth research on sustainable markets, I thrive on transforming complex datasets into actionable business insights.</p>
             <p>Whether I am analyzing corporate annual reports, building inventory management solutions, or exploring creative avenues through Tamil poetry, my focus remains on creating intuitive, data-backed experiences that solve real-world problems.</p>
             <div class="traits-grid">
-              <div class="trait-card"><div class="trait-icon"><i class="fas fa-rocket"></i></div><h3>Product Management</h3><p>Strategic roadmap planning & cross-functional leadership.</p></div>
-              <div class="trait-card"><div class="trait-icon"><i class="fas fa-chart-pie"></i></div><h3>Data Analytics</h3><p>Extracting actionable insights using ML & text analytics.</p></div>
-              <div class="trait-card"><div class="trait-icon"><i class="fas fa-leaf"></i></div><h3>Classical Acupuncturist</h3><p>Holistic approach to health and wellness.</p></div>
-              <div class="trait-card"><div class="trait-icon"><i class="fas fa-pen-nib"></i></div><h3>Tamil Poet</h3><p>Author of "Ilaigalin Narambugal" & creative storyteller.</p></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-rocket"></i></div><h3>Product Management</h3></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-chart-pie"></i></div><h3>Data Analytics</h3></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-leaf"></i></div><h3>Classical Acupuncturist</h3></div>
+              <div class="trait-card"><div class="trait-icon"><i class="fas fa-pen-nib"></i></div><h3>Tamil Poet</h3></div>
             </div>
           </div>
         </div>
@@ -82,76 +86,64 @@
         <div class="projects-grid">
 
           <!-- NEW: Leave Management System -->
-          <div class="project-card reveal" onclick="openModal('leave-mgmt')">
+          <a class="project-card reveal project-card-link" href="projects.html#leave-mgmt">
             <div class="project-image">
               <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600" alt="Leave Management System">
               <span class="project-badge badge-new">New</span>
             </div>
             <div class="project-content">
               <h3>Leave Management System</h3>
-              <p>Developed a digital Leave Management System for Hostel Dispensary, replacing manual logbooks with a
-responsive web application for data entry, and automated record generation using Google AppScript & Google Sheets.</p>
-              <div class="project-tags">
-                <span class="tag">Google Sheets</span>
-                <span class="tag">Google Apps Script</span>
-                <span class="tag">Web App</span>
-              </div>
             </div>
-          </div>
+          </a>
 
           <!-- NEW: AI Resume Analyser -->
-          <div class="project-card reveal" onclick="openModal('ai-resume')">
+          <a class="project-card reveal project-card-link" href="projects.html#ai-resume">
             <div class="project-image">
               <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=600" alt="AI Resume Analyser">
               <span class="project-badge badge-ai">AI</span>
             </div>
             <div class="project-content">
               <h3>AI Resume Analyser</h3>
-              <p>Developing an AI Resume Analyzer, a full-stack web app that uses AI to analyse resumes, match job descriptions, and review LinkedIn profiles, powered by Flask, Groq API, and JavaScript.</p>
-              <div class="project-tags">
-                <span class="tag">NLP</span>
-                <span class="tag">AI</span>
-                <span class="tag">Python</span>
-              </div>
             </div>
-          </div>
+          </a>
 
-       <div class="project-card reveal" onclick="openModal('dissertation')">
+       <a class="project-card reveal project-card-link" href="projects.html#dissertation">
         <div class="project-image">
           <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?q=80&w=600" alt="Dissertation Research">
           <span class="project-badge badge-research">Research</span>
         </div>
         <div class="project-content">
           <h3>Consumer Behavior in Sustainable Personal Care</h3>
-          <p>Researching how product design elements influence consumer buying behavior in sustainable personal care products.</p>
-          <div class="project-tags">
-            <span class="tag">Dissertation</span>
-            <span class="tag">Consumer Behavior</span>
-            <span class="tag">Sustainability</span>
-          </div>
         </div>
-      </div>
+      </a>
 
           <!-- Existing Projects -->
 
           
 
-      <div class="project-card reveal" onclick="openModal('iv-monitor')">
+      <a class="project-card reveal project-card-link" href="projects.html#iv-monitor">
         <div class="project-image">
           <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=600" alt="Smart IV Drip Monitoring System">
           <span class="project-badge badge-new">IoT</span>
         </div>
         <div class="project-content">
           <h3>Smart IV Drip Monitoring System</h3>
-          <p>Built an IoT-based IV monitoring system with real-time tracking and automated alert notifications, reducing manual monitoring and improving patient safety.</p>
-          <div class="project-tags">
-            <span class="tag">IoT</span>
-            <span class="tag">Arduino</span>
-            <span class="tag">Firebase</span>
-          </div>
         </div>
-      </div>
+      </a>
 
+      <a class="project-card reveal project-card-link" href="projects.html#ceo-letter-insights">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=600" alt="CEO Letter Insights">
+          <span class="project-badge badge-ai">Analytics</span>
+        </div>
+        <div class="project-content">
+          <h3>CEO Letter Insights</h3>
+        </div>
+      </a>
+
+        </div>
+        <div class="projects-page-cta reveal">
+          <a href="projects.html" class="btn-primary">Explore Detailed Projects</a>
         </div>
       </div>
     </section>
@@ -269,11 +261,12 @@ responsive web application for data entry, and automated record generation using
           </div>
         </div>
         <div class="resume-download reveal" style="margin-top: 50px; text-align: center;">
-  <a href="assets/TCS Resume.pdf" download="TCS_Resume.pdf" class="btn-primary">
-    <span>📄</span> Download Full Resume
-  </a>
-</div>
-    </section>
+          <a href="assets/Gokulnath_CV.pdf" download="Gokulnath_CV.pdf" class="btn-primary">
+          
+            <span>📄</span> Download Full Resume
+          </a>
+        </div>
+            </section>
 
     <section id="contact" class="section contact-section">
       <div class="container">
@@ -295,14 +288,7 @@ responsive web application for data entry, and automated record generation using
 
     <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
-    <!-- Modal -->
-    <div id="projectModal" class="custom-modal-overlay" style="display:none;" onclick="closeModalOnOverlay(event)">
-      <div class="custom-modal-content" id="modalContent">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <div id="modalBody"></div>
-      </div>
-    </div>
-
+    <script src="projects-data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
