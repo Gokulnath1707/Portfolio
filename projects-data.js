@@ -118,5 +118,29 @@ window.projectsData = [
       github: 'https://github.com/Gokulnath1707/CEO_Letter_Insights',
       live: ''
     }
+  },
+  {
+    id: 'online-shopper-intention',
+    title: 'Online Shopper Purchase Intention Prediction',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800',
+    badge: { label: 'ML', className: 'badge-ai' },
+    summary:
+      'A machine learning project that predicts whether an online visitor will complete a purchase using session behavior, visitor profile, and browsing activity.',
+    overview:
+      'This project uses the Online Shoppers Purchasing Intention dataset to analyze browsing behavior, session-level characteristics, and visitor attributes in order to predict purchase completion and support real-time intervention for e-commerce teams.',
+    features: [
+      'Built a full ML pipeline with data cleaning, preprocessing, and exploratory data analysis',
+      'Handled class imbalance using SMOTE to improve buyer prediction reliability',
+      'Trained and compared Logistic Regression, Decision Tree, Random Forest, and XGBoost models',
+      'Evaluated models using Recall, Precision, F1 Score, and ROC-AUC',
+      'Designed a real-time intervention framework for discount popups, chatbot support, and cart abandonment reduction'
+    ],
+    tech: ['Python', 'Machine Learning', 'SMOTE', 'Decision Tree', 'Random Forest', 'XGBoost'],
+    outcome:
+      'Enabled a practical purchase-probability workflow where e-commerce teams can intervene earlier, reduce abandonment, and protect revenue using model-driven triggers.',
+    links: {
+      github: 'https://github.com/Gokulnath1707/Online_Shopper_Purchase_Intention_Prediction/tree/main',
+      live: ''
+    }
   }
 ];
