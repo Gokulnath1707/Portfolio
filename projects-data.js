@@ -99,11 +99,11 @@ window.projectsData = [
     id: 'ceo-letter-insights',
     title: 'CEO Letter Insights',
     image: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=800',
-    badge: { label: 'Analytics', className: 'badge-ai' },
+    badge: { label: 'ML', className: 'badge-ai' },
     summary:
       'A master\'s-level text analytics study of five years of CEO letters from India\'s five largest IT companies to understand how leaders communicate strategy, disruption response, and differentiation.',
     overview:
-      'This project studies 25 annual report CEO letters from TCS, Infosys, HCLTech, Tech Mahindra, and Wipro to decode whether top executives genuinely communicate with distinct strategic thinking or largely use similar corporate language with minor variation.',
+      'This project studies 30 annual report CEO letters from TCS, Infosys, HCLTech, LTI Mindtree, Tech Mahindra, and Wipro to decode whether top executives genuinely communicate with distinct strategic thinking or largely use similar corporate language with minor variation.',
     features: [
       'Processed five years of CEO letters from India\'s five largest IT companies',
       'Applied FinBERT-based sentiment analysis to identify tone across leadership communication',
@@ -111,7 +111,7 @@ window.projectsData = [
       'Measured strategic pillar emphasis, readability, hedging ratio, and forward-looking statement density',
       'Built the analysis to compare how CEOs communicate strategy during disruption and growth cycles'
     ],
-    tech: ['Python', 'NLP', 'FinBERT', 'NMF', 'TF-IDF', 'Text Analytics'],
+    tech: ['Python', 'NLP', 'FinBERT', 'NMF', 'TF-IDF', 'Text Analytics', 'Data Visualization'],
     outcome:
       'Revealed how executive language can be quantitatively compared to uncover strategic patterns, communication style differences, and leadership positioning across major IT firms.',
     links: {
@@ -135,11 +135,35 @@ window.projectsData = [
       'Evaluated models using Recall, Precision, F1 Score, and ROC-AUC',
       'Designed a real-time intervention framework for discount popups, chatbot support, and cart abandonment reduction'
     ],
-    tech: ['Python', 'Machine Learning', 'SMOTE', 'Decision Tree', 'Random Forest', 'XGBoost'],
+    tech: ['Python', 'Machine Learning', 'SMOTE', 'Decision Tree', 'Random Forest', 'XGBoost', 'Data Visualization'],
     outcome:
       'Enabled a practical purchase-probability workflow where e-commerce teams can intervene earlier, reduce abandonment, and protect revenue using model-driven triggers.',
     links: {
       github: 'https://github.com/Gokulnath1707/Online_Shopper_Purchase_Intention_Prediction/tree/main',
+      live: ''
+    }
+  },
+  {
+    id: 'ola-ride-analytics',
+    title: 'Ola Ride Analytics Dashboard',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800',
+    badge: { label: 'Power BI', className: 'badge-new' },
+    summary:
+      'An interactive 4-page Power BI dashboard analyzing 50,000 Ola cab bookings across Bengaluru to surface ride value, profitability, revenue trends, and cancellation behavior.',
+    overview:
+      'This project analyzes January 2024 Ola booking data for Bengaluru using a Power BI dashboard built around four analytical dimensions: overall business performance, vehicle type profitability, revenue breakdown, and cancellation behavior.',
+    features: [
+      'Built a 4-page Power BI dashboard covering 50,000 ride bookings and over Rs. 34.27 million in ride value',
+      'Cleaned and modeled a multi-attribute booking dataset for reliable drill-down analysis',
+      'Created DAX measures to track performance across KPIs, vehicle profitability, revenue, and cancellations',
+      'Identified a 19.22% driver cancellation rate linked to distance-preference mismatches',
+      'Enabled stakeholders to move from top-level KPIs to root-cause analysis in a few clicks'
+    ],
+    tech: ['Power BI', 'DAX', 'Data Modeling', 'Business Analytics', 'Dashboard Design'],
+    outcome:
+      'Helped surface actionable recommendations to improve ride completion rates, optimize fleet utilization, and understand revenue behavior across vehicle categories and payment modes.',
+    links: {
+      github: 'https://github.com/Gokulnath1707/Ola-Ride-Analytics-Dashboard',
       live: ''
     }
   }
