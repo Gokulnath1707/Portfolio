@@ -1,5 +1,29 @@
 window.projectsData = [
   {
+    id: 'news-summariser',
+    title: 'News Summariser Chrome Extension',
+    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800',
+    badge: { label: 'Extension', className: 'badge-ai' },
+    summary:
+      'Built a Chrome extension that reads news content from the active page and generates a short, easy-to-scan summary so users can understand key updates faster.',
+    overview:
+      'This browser extension is designed to reduce information overload by summarizing long-form news articles directly inside Chrome. It helps readers quickly capture the main story, important points, and overall context without reading the entire article first.',
+    features: [
+      'Summarizes article content from the active browser tab',
+      'Presents concise key-point output for faster reading',
+      'Improves news consumption by reducing time spent on lengthy articles',
+      'Runs in a lightweight Chrome extension workflow for easy access',
+      'Creates a simple productivity layer on top of everyday news browsing'
+    ],
+    tech: ['Chrome Extension', 'JavaScript', 'HTML', 'CSS', 'Content Scripts', 'Browser Productivity'],
+    outcome:
+      'Created a practical reading assistant that makes news consumption faster, simpler, and more efficient for users who want the main idea at a glance.',
+    links: {
+      github: '',
+      live: ''
+    }
+  },
+  {
     id: 'leave-mgmt',
     title: 'Leave Management System',
     image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800',
