@@ -1,0 +1,64 @@
+/* === Enhancements CSS — Dark Mode Transitions & Theme Toggle Icon === */
+
+/* Smooth Dark Mode Transitions — ensures all elements transition smoothly when toggling dark mode */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-section,
+.section-title,
+.about-section,
+.projects-section,
+.skills-section,
+.internships-section,
+.accomplishments-section,
+.contact-section,
+.footer,
+.sub-section-title,
+.project-detail-section,
+.project-detail-block,
+.hero-subtitle,
+.hero-tagline,
+.about-text p,
+.skill-header,
+.internship-header h3,
+.internship-bullets li,
+.cert-info p,
+.cert-icon,
+.project-detail-summary,
+.project-detail-content h2,
+.project-detail-block h3,
+.trait-card h3,
+.loader,
+.hero-content,
+.internship-duration,
+.internship-role,
+.project-detail-block p,
+.project-feature-list li,
+.projects-detail-intro,
+.projects-count,
+.nav-logo,
+.hamburger span {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* About slider — add background/border transition for dark mode */
+.about-slider {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* === Theme Toggle Sun/Moon Icon === */
+.theme-toggle .toggle-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle .toggle-circle i {
+  font-size: 10px;
+  color: var(--primary-color);
+}
+
+body.dark-mode .theme-toggle .toggle-circle i {
+  color: #fbbf24;
+}
