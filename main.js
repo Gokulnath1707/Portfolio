@@ -117,8 +117,8 @@ function setupCustomCursor() {
   };
 
   const animateFollower = () => {
-    followerX += (mouseX - followerX) * 0.18;
-    followerY += (mouseY - followerY) * 0.18;
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
     follower.style.transform = `translate(${followerX}px, ${followerY}px)`;
     window.requestAnimationFrame(animateFollower);
   };
