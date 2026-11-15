@@ -23,13 +23,13 @@ const content = {
   hero: {
     greeting:    'Hi, I\'m',
     name:        'Gokulnath B',
-    role:        'Product Manager & Developer',
+    role:        'Risk Management Analyst | Aspiring Product Manager',
     valueStatement: 'I work at the intersection of technology, business, and AI — building products grounded in data, designed around users.',
     cta: {
       primary:   { label: 'View Projects', href: '#projects' },
       secondary: { label: 'Download Resume', href: '/resume.pdf' },
     },
-    photo:       '/images/profile.svg',
+    photo:       '/images/gklog.png',
   },
 
   // ── About ─────────────────────────────────────────────────
@@ -45,7 +45,7 @@ const content = {
       { label: 'Availability',  value: 'Open to opportunities' },
       { label: 'Languages',     value: 'Tamil, English' },
     ],
-    photo: '/images/profile.svg',
+    photo: '/images/Lanyard%20image.png',
   },
 
   // ── Experience ────────────────────────────────────────────
@@ -61,6 +61,19 @@ const content = {
         'Prepare risk reports and documentation for stakeholders in line with TCS\'s risk and compliance frameworks.',
         'Coordinate an ongoing marketing campaign — handling execution, stakeholder alignment, and progress tracking.',
       ],
+    },
+    {
+      company:   'Tata Consultancy Services',
+      role:      'BFSI Analyst Relations Intern',
+      type:      'Internship',
+      period:    'May 2025 - July 2025',
+      location:  'Bengaluru, India',
+      bullets: [
+        'Mapped 160+ key industry analysts and their coverage areas in the BFSI domain and across Tech domains',
+        'Created a comprehensive analyst database to support TCS\'s analyst relations strategy and engagement planning.',
+        'Developed a structured workflow for the Sentiment Analysis of vendor evaluation reports using Python.',
+        'Performed competitive intelligence for 7 peers by benchmarking to support strategic positioning.',
+        ],
     },
     {
       company:   'ShorterLoop',

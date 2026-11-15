@@ -1,4 +1,4 @@
-// Hero.jsx — name, role, CTAs, Lanyard badge, social links, Aurora background
+// Hero.jsx — name, role, CTAs, ElectricLogo, social links, Aurora background
 import { Mail, ArrowDown } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
 import { useEffect, useState } from 'react';
@@ -99,10 +99,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — Lanyard 3D badge */}
+          {/* Right — animated electric logo */}
           <div className="flex justify-center lg:justify-end">
             <div className="w-72 h-72 sm:w-80 sm:h-80" aria-hidden="true">
               <ElectricLogo
+                src={hero.photo}
                 color="#C4622D"
                 glowColor="#E07A42"
                 scale={0.9}

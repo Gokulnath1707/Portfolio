@@ -16,11 +16,10 @@ export default function About() {
 
   return (
     <SectionWrapper id="about" className="bg-surface">
-      <SectionHeading id="about" label="Who I am" title="About Me" />
-
       <div className="grid lg:grid-cols-5 gap-12 items-start">
         {/* Bio — 3 columns */}
         <div className="lg:col-span-3 flex flex-col gap-5">
+          <SectionHeading id="about" label="Who I am" title="About Me" />
           {about.bio.map((para, i) => (
             <ScrollReveal key={i} delay={i * 80} direction="up" reducedMotion={reduced}>
               <p className="text-base text-ink-muted leading-relaxed">{para}</p>
@@ -33,12 +32,13 @@ export default function About() {
           {/* Interactive profile badge */}
           <ScrollReveal direction="left" delay={120} reducedMotion={reduced}>
             <div
-              className="h-[26rem] w-full max-w-sm mx-auto lg:mx-0"
+              className="h-[26rem] w-full max-w-sm mx-auto lg:mt-7"
               aria-label="Interactive profile lanyard"
             >
               <Lanyard
                 frontImage={about.photo}
-                backImage={about.photo}
+                backImage="/images/gklogo.jpg"
+                imageFit="contain"
                 cardColor="#EFEBE3"
                 strapColor="#C4622D"
                 size={0.7}
