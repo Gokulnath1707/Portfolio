@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4622D"/>
+      <stop offset="100%" stop-color="#8A3F19"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="#EFEBE3"/>
+  <circle cx="200" cy="155" r="70" fill="url(#avatarGrad)"/>
+  <circle cx="200" cy="140" r="45" fill="#F7F4EF" opacity="0.9"/>
+  <path d="M110 330 C110 245, 290 245, 290 330 Z" fill="url(#avatarGrad)"/>
+  <text x="200" y="375" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="22" fill="#1A1917" opacity="0.8">Gokulnath B</text>
+</svg>
