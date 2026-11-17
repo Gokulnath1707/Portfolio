@@ -11,6 +11,16 @@
   line-height: 1.2;
 }
 
+.gooey-nav.gooey-nav--desktop-only {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .gooey-nav.gooey-nav--desktop-only {
+    display: inline-flex;
+  }
+}
+
 .gooey-nav--sm {
   --gn-pad: 5px;
   --gn-gap: 2px;

@@ -58,11 +58,11 @@ export default function Navbar({ theme, toggleTheme }) {
             color={theme === 'dark' ? '#E07A42' : '#C4622D'}
             size="sm"
             frame={false}
-            className="hidden md:inline-flex"
+            className="gooey-nav--desktop-only"
           />
 
           {/* Right side: theme toggle + resume */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle theme={theme} toggle={toggleTheme} />
             <a
               href="/resume.pdf"
@@ -77,7 +77,7 @@ export default function Navbar({ theme, toggleTheme }) {
           </div>
 
           {/* Mobile: theme toggle + hamburger */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <ThemeToggle theme={theme} toggle={toggleTheme} />
             <button
               onClick={() => setMenuOpen(o => !o)}
@@ -100,7 +100,7 @@ export default function Navbar({ theme, toggleTheme }) {
         aria-modal="true"
         aria-label="Navigation menu"
         className={`fixed inset-0 z-40 bg-bg flex flex-col pt-24 px-6 pb-10
-          transition-all duration-300 md:hidden
+          transition-all duration-300 lg:hidden
           ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <ul className="flex flex-col gap-1 flex-1" role="list">
