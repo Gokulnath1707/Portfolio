@@ -1,5 +1,6 @@
 // About.jsx — bio, photo, quick facts, ScrollReveal animation
 import { MapPin, Briefcase, Globe, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import content from '../../data/content';
 import SectionWrapper from '../ui/SectionWrapper';
 import SectionHeading from '../ui/SectionHeading';
@@ -25,6 +26,14 @@ export default function About() {
               <p className="text-base text-ink-muted leading-relaxed">{para}</p>
             </ScrollReveal>
           ))}
+          <Link
+            to="/poem-book"
+            className="inline-flex w-fit items-center gap-2 rounded-xl bg-accent px-5 py-3
+              text-sm font-semibold text-white transition-colors hover:bg-accent/90"
+          >
+            <BookOpen size={19} strokeWidth={1.75} aria-hidden />
+            Read my book
+          </Link>
         </div>
 
         {/* Right column — photo + quick facts */}

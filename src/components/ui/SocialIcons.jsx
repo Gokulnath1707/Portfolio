@@ -1,5 +1,5 @@
 // SocialIcons.jsx — Clean, lightweight SVG social icons with matching stroke/fill styling
-export function GithubIcon({ size = 18, className = '' }) {
+export function GithubIcon({ size = 20, className = '' }) {
   return (
     <svg
       width={size}
@@ -19,7 +19,7 @@ export function GithubIcon({ size = 18, className = '' }) {
   );
 }
 
-export function LinkedinIcon({ size = 18, className = '' }) {
+export function LinkedinIcon({ size = 20, className = '' }) {
   return (
     <svg
       width={size}
@@ -36,6 +36,27 @@ export function LinkedinIcon({ size = 18, className = '' }) {
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect width="4" height="12" x="2" y="9" />
       <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
+export function InstagramIcon({ size = 20, className = '' }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="18" cy="6" r="1" fill="currentColor" stroke="none" />
     </svg>
   );
 }

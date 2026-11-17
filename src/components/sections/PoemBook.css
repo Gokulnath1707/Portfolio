@@ -1,0 +1,209 @@
+.poem-book__flipbook-shell,
+.poem-book__skeleton {
+  width: 100%;
+  max-width: min(100%, 1040px, calc(78vh * var(--book-aspect-ratio)));
+  aspect-ratio: var(--book-aspect-ratio);
+  margin-inline: auto;
+}
+
+.poem-book__flipbook-shell {
+  border-radius: 0.75rem;
+  box-shadow: 0 1.25rem 1.75rem rgba(26, 25, 23, 0.12);
+}
+
+.poem-book__flipbook {
+  width: 100%;
+  height: 100%;
+}
+
+.poem-book__flipbook .page {
+  overflow: hidden;
+  background: #fff;
+}
+
+.poem-book__flipbook .page canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.poem-book__skeleton {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-bg);
+  color: var(--color-ink-muted);
+  text-align: center;
+}
+
+.poem-book__skeleton-page {
+  width: min(48vw, 260px);
+  height: 180px;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-surface) 25%,
+    var(--color-border) 50%,
+    var(--color-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: poem-book-skeleton 1.4s ease-in-out infinite;
+}
+
+.poem-book__skeleton p,
+.poem-book__render-error {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.poem-book__message {
+  display: grid;
+  min-height: 240px;
+  place-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-bg);
+  color: var(--color-ink-muted);
+  text-align: center;
+}
+
+.poem-book__message a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.poem-book__render-error {
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+}
+
+.poem-book__toolbar,
+.poem-book__page-controls,
+.poem-book__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.poem-book__toolbar {
+  justify-content: space-between;
+  padding-top: 1.25rem;
+}
+
+.poem-book__loading-controls {
+  height: 7.5rem;
+}
+
+@media (min-width: 640px) {
+  .poem-book__loading-controls {
+    height: 4rem;
+  }
+}
+
+.poem-book__page-controls,
+.poem-book__actions {
+  gap: 0.5rem;
+}
+
+.poem-book__page-controls button,
+.poem-book__actions button,
+.poem-book__actions a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  padding: 0.625rem 1rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.poem-book__page-controls button:hover:not(:disabled),
+.poem-book__actions button:hover,
+.poem-book__actions a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.poem-book__page-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.poem-book__page-controls button:focus-visible,
+.poem-book__actions button:focus-visible,
+.poem-book__actions a:focus-visible,
+.poem-book__flipbook:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.poem-book__page-count {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.poem-book__hint {
+  margin: 0.75rem 0 0;
+  color: var(--color-ink-muted);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.poem-book__viewer:fullscreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: var(--color-bg);
+}
+
+.poem-book__viewer:fullscreen .poem-book__flipbook-shell {
+  max-width: min(100%, 1040px, calc((100vh - 9rem) * var(--book-aspect-ratio)));
+}
+
+.poem-book__viewer:fullscreen .poem-book__toolbar {
+  width: min(100%, 1040px);
+  margin-inline: auto;
+}
+
+@keyframes poem-book-skeleton {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poem-book__skeleton-page {
+    animation: none;
+  }
+
+  .poem-book__page-controls button,
+  .poem-book__actions button,
+  .poem-book__actions a {
+    transition: none;
+  }
+}

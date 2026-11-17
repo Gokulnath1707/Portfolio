@@ -1,5 +1,5 @@
 // App.jsx — routes, layout shell, theme provider
-import { useCallback, useState } from 'react';
+import { lazy, Suspense, useCallback, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useTheme } from './hooks/useTheme';
 import Navbar        from './components/layout/Navbar';
@@ -7,6 +7,8 @@ import Footer        from './components/layout/Footer';
 import SplitFlapText from './components/SplitFlapText';
 import Home          from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
+
+const PoemBookPage = lazy(() => import('./pages/PoemBook'));
 
 export default function App() {
   const { theme, toggle } = useTheme();
@@ -19,10 +21,24 @@ export default function App() {
         <>
           <Navbar theme={theme} toggleTheme={toggle} />
           <Routes>
-            <Route path="/"                   element={<Home />} />
+            <Route path="/"                   element={<Home theme={theme} />} />
             <Route path="/projects/:slug"     element={<ProjectDetail />} />
+            <Route
+              path="/poem-book"
+              element={
+                <Suspense
+                  fallback={
+                    <main className="pt-24 text-center text-ink-muted" role="status">
+                      Opening book reader...
+                    </main>
+                  }
+                >
+                  <PoemBookPage />
+                </Suspense>
+              }
+            />
             {/* Catch-all → home */}
-            <Route path="*"                   element={<Home />} />
+            <Route path="*"                   element={<Home theme={theme} />} />
           </Routes>
           <Footer />
         </>

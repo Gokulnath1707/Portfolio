@@ -1,34 +1,38 @@
-// Hero.jsx — name, role, CTAs, ElectricLogo, social links, Aurora background
-import { Mail, ArrowDown } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
-import { useEffect, useState } from 'react';
+// Hero.jsx — name, role, CTAs, ElectricLogo, social links, Galaxy background
+import { Mail, ArrowDown, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { GithubIcon, InstagramIcon, LinkedinIcon } from '../ui/SocialIcons';
 import content from '../../data/content';
-import Aurora from '../reactbits/Aurora';
+import Galaxy from '../Galaxy';
 import ElectricLogo from '../ElectricLogo';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 const { hero, meta } = content;
 
-export default function Hero() {
+export default function Hero({ theme }) {
   const reduced = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 767px)');
-    setIsMobile(mq.matches);
-    const handler = (e) => setIsMobile(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
+  const lightMode = theme === 'light';
 
   return (
     <section
       id="hero"
-      className="relative min-h-dvh flex items-center overflow-hidden"
+      className="relative isolate min-h-dvh flex items-center overflow-hidden"
       aria-label="Introduction"
     >
       {/* Background */}
-      <Aurora isMobile={isMobile} className="opacity-80" />
+      <Galaxy
+        className="hero-galaxy"
+        lightMode={lightMode}
+        starColors={lightMode
+          ? ['#9A4A27', '#C4622D', '#76523D']
+          : ['#C4622D', '#E07A42', '#F0E0D6']}
+        opacity={lightMode ? 0.35 : 0.65}
+        mouseInteraction={false}
+        mouseRepulsion={false}
+        clickWarp={false}
+        disableAnimation={reduced}
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 max-w-content mx-auto w-full px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -67,6 +71,16 @@ export default function Hero() {
               >
                 {hero.cta.secondary.label}
               </a>
+              <Link
+                to={hero.cta.book.href}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
+                  border border-border bg-surface text-ink font-semibold
+                  hover:border-accent hover:text-accent
+                  transition-colors duration-150 text-sm"
+              >
+                <BookOpen size={18} strokeWidth={1.75} aria-hidden />
+                {hero.cta.book.label}
+              </Link>
             </div>
 
             {/* Social icons */}
@@ -76,7 +90,7 @@ export default function Hero() {
                 aria-label="Email Gokulnath"
                 className="text-ink-muted hover:text-accent transition-colors"
               >
-                <Mail size={20} strokeWidth={1.75} />
+                <Mail size={22} strokeWidth={1.75} />
               </a>
               <a
                 href={meta.linkedin}
@@ -85,7 +99,7 @@ export default function Hero() {
                 aria-label="LinkedIn"
                 className="text-ink-muted hover:text-accent transition-colors"
               >
-                <LinkedinIcon size={20} />
+                <LinkedinIcon size={22} />
               </a>
               <a
                 href={meta.github}
@@ -94,7 +108,16 @@ export default function Hero() {
                 aria-label="GitHub"
                 className="text-ink-muted hover:text-accent transition-colors"
               >
-                <GithubIcon size={20} />
+                <GithubIcon size={22} />
+              </a>
+              <a
+                href={meta.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-ink-muted hover:text-accent transition-colors"
+              >
+                <InstagramIcon size={22} />
               </a>
             </div>
           </div>

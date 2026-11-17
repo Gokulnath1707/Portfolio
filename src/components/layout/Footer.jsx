@@ -1,6 +1,6 @@
 // Footer.jsx — minimal footer
 import { Mail } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
+import { GithubIcon, InstagramIcon, LinkedinIcon } from '../ui/SocialIcons';
 import content from '../../data/content';
 
 const { meta, footer } = content;
@@ -17,7 +17,7 @@ export default function Footer() {
             aria-label="Email"
             className="text-ink-muted hover:text-accent transition-colors"
           >
-            <Mail size={18} strokeWidth={1.75} />
+            <Mail size={20} strokeWidth={1.75} />
           </a>
           <a
             href={meta.linkedin}
@@ -26,7 +26,7 @@ export default function Footer() {
             aria-label="LinkedIn"
             className="text-ink-muted hover:text-accent transition-colors"
           >
-            <LinkedinIcon size={18} />
+            <LinkedinIcon size={20} />
           </a>
           <a
             href={meta.github}
@@ -35,7 +35,16 @@ export default function Footer() {
             aria-label="GitHub"
             className="text-ink-muted hover:text-accent transition-colors"
           >
-            <GithubIcon size={18} />
+            <GithubIcon size={20} />
+          </a>
+          <a
+            href={meta.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-ink-muted hover:text-accent transition-colors"
+          >
+            <InstagramIcon size={20} />
           </a>
         </div>
       </div>

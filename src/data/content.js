@@ -13,8 +13,9 @@ const content = {
     location:    'Bengaluru, India',
     email:       'bgokulnath567@gmail.com',
     phone:       '+91 7339397567',
-    linkedin:    'https://www.linkedin.com/in/gokulnath-b', // TODO: confirm exact URL from your LinkedIn
-    github:      'https://github.com/gokulnath',            // TODO: confirm exact GitHub username
+    linkedin:    'https://www.linkedin.com/in/gokulnath17',
+    github:      'https://github.com/Gokulnath1707',
+    instagram:   'https://www.instagram.com/__gokulnathin_varigal__/',
     portfolio:   'https://gokulnath.dev',                   // TODO: update once deployed
     availability: 'Open to PM & full-stack roles',
   },
@@ -28,6 +29,7 @@ const content = {
     cta: {
       primary:   { label: 'View Projects', href: '#projects' },
       secondary: { label: 'Download Resume', href: '/resume.pdf' },
+      book:      { label: 'Read My Book', href: '/poem-book' },
     },
     photo:       '/images/gklog.png',
   },
@@ -138,6 +140,17 @@ const content = {
     },
   ],
 
+  // ── Poetry ────────────────────────────────────────────────
+  poemBook: {
+    label:       'Poetry & writing',
+    heading:     'PoemBook',
+    bookTitle:   'Ilaigalin Narambugal',
+    description: 'I write Tamil poetry alongside my work in product and technology. Ilaigalin Narambugal is my poetry book.',
+    credits:     'I have also contributed to four published anthologies.',
+    author:      'By Gokulnath B',
+    href:        '/poem-book.pdf',
+  },
+
   // ── Skills ────────────────────────────────────────────────
   skills: {
     'Data Analytics & Visualisation': [
@@ -219,13 +232,7 @@ const content = {
   // ── Contact ───────────────────────────────────────────────
   contact: {
     heading:     'Get in touch',
-    description: 'Whether you have a role to discuss, a project to collaborate on, or just want to connect — my inbox is open.',
-    // EmailJS credentials — fill these in from your EmailJS dashboard
-    emailjs: {
-      serviceId:  'TODO_SERVICE_ID',
-      templateId: 'TODO_TEMPLATE_ID',
-      publicKey:  'TODO_PUBLIC_KEY',
-    },
+    description: 'Have an opportunity, a project, or just want to connect? Reach out directly — I’d be glad to hear from you.',
   },
 
   // ── Footer ────────────────────────────────────────────────
